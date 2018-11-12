@@ -6,11 +6,13 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/pokestyles.css">
     <title>Pokédex</title>
 </head>
 <body>
 <header>
-    <h1>POKEDEX</h1>
+    <img src="img/pokeball.svg">
+    <h1>POKÈDEX</h1>
 </header>
 <main>
     <form>
