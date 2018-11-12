@@ -5,6 +5,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/normalize.css">
     <title>Pokédex</title>
 </head>
 <body>
