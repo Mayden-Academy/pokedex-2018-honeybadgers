@@ -5,6 +5,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Cantarell:400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/pokestyles.css">
     <title>Pokédex</title>
@@ -16,11 +17,11 @@
 </header>
 <main>
     <form>
-        <label for="email">Email</label>
-        <input id="email" type="email">
-        <input type="submit" value="Login">
+        <label class="email" for="email"></label>
+        <input class="email" id="email" placeholder=" Email..." type="email">
+        <input class="loginbutton" type="submit" value="Login">
     </form>
-    <p></p>
+    <p>This is not a valid email. Please try again.</p>
 </main>
 </body>
 </html>

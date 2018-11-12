@@ -1,12 +1,22 @@
 $white: #ffffff;
 $mine-shaft-grey: #222222;
 
+$poke-red: #EF5350;
+$poke-blue: #198CD2;
+$poke-grey: #cccccc;
+$poke-yellow: #FECA1B;
 
-$logo-text-color: $white;
+
+$logo-text-color: $poke-yellow;
 $logo-text-shadow: $mine-shaft-grey;
 
+* {
+  box-sizing: border-box;
+}
 
-
+html {
+  font-family: 'Cantarell', sans-serif;
+}
 
 @font-face {
   font-family: Ketchum;
@@ -14,10 +24,6 @@ $logo-text-shadow: $mine-shaft-grey;
 }
 
 header {
-  //background-image: url("../img/pokeball.svg");
-  //background-repeat: no-repeat;
-  //background-size: contain;
-  //background-blend-mode: multiply;
   margin: 40px auto;
   width: 400px;
   height: 300px;
@@ -45,8 +51,42 @@ header img {
   height: 70%;
 }
 
+
 main {
   margin: 0 auto;
   width: 400px;
-  background-color: red;
+}
+label {
+  display: none;
+}
+
+form {
+  height: 37px;
+}
+
+.email {
+  float: left;
+  width: 73%;
+  height: 100%;
+  border-radius: 3px;
+  border: 1px solid $poke-grey;
+}
+
+.loginbutton {
+  float: right;
+  width: 25%;
+  height: 100%;
+  background: transparent;
+  border: 1px solid $poke-blue;
+  border-radius: 3px;
+
+  &:hover {
+    background-color: $poke-blue;
+    color: $poke-yellow;
+    transition: all 0.3s;
+  }
+
+   &:active {
+     background-color: hotpink;
+   }
 }
