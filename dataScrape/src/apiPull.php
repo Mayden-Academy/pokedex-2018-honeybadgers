@@ -9,7 +9,7 @@ class apiPull
      */
     public function __construct()
     {
-        for ($i = 1; $i <= 2; $i++)
+        for ($i = 1; $i <= 4; $i++)
         {
             $curl = curl_init();
 
@@ -33,9 +33,9 @@ class apiPull
     }
 
     /**
-     * @return mixed
+     * @return array contains a JSON for each pokemon
      */
-    public function getPokemonJSONs(): Array
+    public function getPokemonJSONs(): array
     {
         return $this->pokemonJSONs;
     }

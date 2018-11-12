@@ -1,6 +1,8 @@
 <?php
 
 require_once 'src/apiPull.php';
+require_once 'src/pokemonTableUpdate.php';
 
 $test = new apiPull();
-var_dump($test->getPokemonJSONs());
+$test2 = new pokemonTableUpdate($test->getPokemonJSONs());
+$test2->dbUpdate();
