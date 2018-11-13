@@ -11,7 +11,7 @@ class User
      * @param AbstractEmail $email the validated email address from the user
      * @param resource $db the database connection
      */
-    public function __construct(AbstractEmail $email, $db)
+    public function __construct(AbstractEmail $email, \PDO $db)
     {
         $this->email = $email;
 
