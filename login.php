@@ -14,7 +14,7 @@
 </header>
 <main>
     <form>
-        <input class="email" id="email" placeholder=" Email..." type="email">
+        <input class="email" id="email" alt="email" placeholder=" Email..." type="email">
         <input class="loginbutton" type="submit" value="Login">
     </form>
     <p>This is not a valid email. Please try again.</p>
