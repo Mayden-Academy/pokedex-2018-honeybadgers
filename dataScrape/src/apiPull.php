@@ -9,7 +9,7 @@ class apiPull
      */
     public function __construct()
     {
-        for ($i = 1; $i <= 2; $i++)
+        for ($i = 1; $i <= 151; $i++)
         {
             $curl = curl_init();
 
@@ -31,10 +31,10 @@ class apiPull
             $pokemon = json_decode($response);
 
             $pokemonData = [
-                'id' => $pokemon->id,
-                'name' => $pokemon->name,
-                'type_1' => $pokemon->types[0]->type->name,
-                'type_2' => $pokemon->types[1]->type->name
+                ':id' => $pokemon->id,
+                ':name' => $pokemon->name,
+                ':type_1' => $pokemon->types[0]->type->name,
+                ':type_2' => $pokemon->types[1]->type->name
             ];
 
             $this->pokemonDataList[] = $pokemonData;

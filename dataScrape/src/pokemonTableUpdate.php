@@ -24,17 +24,8 @@ class pokemonTableUpdate
     public function dbUpdate()
     {
         foreach ($this->pokemonDataList as $pokemonData) {
-            $id = $pokemonData['id'];
-            $name = $pokemonData['name'];
-            $type_1 = $pokemonData['type_1'];
-            $type_2 = $pokemonData['type_2'];
             $query = $this->db->prepare('INSERT INTO pokemon VALUES (:id, :name, :type_1, :type_2);');
-            $query->execute([
-                ':id' => $id,
-                ':name' => $name,
-                ':type_1' => $type_1,
-                ':type_2' => $type_2
-            ]);
+            $query->execute($pokemonData);
         }
     }
 }
