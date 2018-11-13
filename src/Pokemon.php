@@ -10,19 +10,26 @@ class Pokemon {
     private $name;
     private $types;
 
-    public function __construct($id, $name, $types) {
+    /**
+     * This constructs a single pokemon instance and sets the properties accordingly.
+     *
+     * @param int $id The pokemon's id.
+     * @param string $name The pokemon's name.
+     * @param array $types $types The pokemon's types.
+     *
+     */
+    public function __construct(int $id, string $name, array $types) {
 
-        if(!is_int($id)) {
-            throw new PokemonException('expected integer in $id parameter, given ' . gettype($id) . ' instead.');
-        }
         $this->id = $id;
         $this->name = $name;
-        if (!is_array($types)) {
-            throw new PokemonException('expected array in $types parameter, given ' . gettype($types) . ' instead.');
-        }
         $this->types = $types;
     }
 
+    /**
+     * @param string $propertyName The property the caller is trying to access.
+     * @return mixed the value belonging to the given property.
+     * @throws PokemonException if the property does not exist on the class.
+     */
     public function __get($propertyName) {
         if (property_exists('\\Pokedex\\Pokemon', $propertyName)) {
             return $this->$propertyName;
