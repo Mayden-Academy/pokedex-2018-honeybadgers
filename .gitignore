@@ -2,4 +2,6 @@
 vendor/
 errorLog.txt
 .DS_Store
+css/
+node_modules/
 
