@@ -17,7 +17,7 @@
 </header>
 <main>
     <form>
-        <label class="email" for="email"></label>
+        <label class="email" for="email" aria-label="email"></label>
         <input class="email" id="email" placeholder=" Email..." type="email">
         <input class="loginbutton" type="submit" value="Login">
     </form>
