@@ -9,7 +9,7 @@ class ErrorLog
      * @param string $error Message can be user defined or accessed from Exception object
      */
     public static function log(string $errorMessage) {
-        $errorLog = fopen(self::ERROR_LOG, 'a');
+        $errorLog = fopen(self::ERROR_LOG, 'a+');
         fwrite($errorLog, $errorMessage . " " . date("Y/m/d H:i:s") . "\n");
         fclose($errorLog);
     }
