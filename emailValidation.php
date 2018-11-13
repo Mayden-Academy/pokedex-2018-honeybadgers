@@ -9,7 +9,7 @@ use Pokedex\User;
 use Pokedex\DbConnection;
 use Pokedex\ErrorLog;
 
-$userEmail = $_POST['tbc'] ?? FALSE; //$_POST['tbc'] needs to be replaced with actual input name
+$userEmail = $_POST['email'] ?? FALSE; //$_POST['tbc'] needs to be replaced with actual input name
 
 if ($userEmail) {
     try {
