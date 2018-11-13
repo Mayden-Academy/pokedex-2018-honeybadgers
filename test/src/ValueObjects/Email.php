@@ -9,13 +9,13 @@ class EmailTest extends TestCase
 {
 
     public function testConstructPass() {
-        $email = new Email('imogenhallett@hotmail.com');
+        $email = new Email('test@hotmail.com');
         $this->assertInstanceOf(Email::class, $email);
     }
 
     public function testConstructFail() {
         $this->expectException(\Pokedex\Exceptions\EmailException::class);
-        $email = new Email('imogenhallett');
+        $email = new Email('test');
     }
 
     public function testConstructMalformed() {
@@ -24,8 +24,8 @@ class EmailTest extends TestCase
     }
 
     public function testToString()  {
-        $test = new Email('imogenhallett@hotmail.com');
+        $test = new Email('test@hotmail.com');
         $test = (string)$test;
-        $this->assertEquals('imogenhallett@hotmail.com', $test);
+        $this->assertEquals('test@hotmail.com', $test);
     }
 }
