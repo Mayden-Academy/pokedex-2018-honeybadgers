@@ -1,6 +1,4 @@
 <?php
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,8 +17,8 @@
                 <li class="poke-container">
                     <div class="info">
                         <div class="upper">
-                            <h2 class="poke-title">Name of Pokemon</h2>
-                            <h2 class="poke-id">#55</h2>
+                            <h2 class="poke-title">Pikachu</h2>
+                            <h2 class="poke-id">#25</h2>
                         </div>
                         <div class="lower">
                             <div class="type-holder">
@@ -44,9 +42,8 @@
                         </div>
                     </div>
                     <div class="picture-holder">
-                            <img src="https://pokeres.bastionbot.org/images/pokemon/1.png" class="picture">
+                            <img src="https://pokeres.bastionbot.org/images/pokemon/25.png" class="picture">
                     </div>
-
                 </li>
             </ul>
         </div>
@@ -55,6 +52,5 @@
         </footer>
     </form>
 </main>
-
 </body>
 </html>
