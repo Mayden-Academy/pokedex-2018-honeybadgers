@@ -3,31 +3,37 @@
 class pokemonTableUpdate
 {
     private $db;
-    private $pokemonJSONs;
+    private $pokemonDataList;
 
     /**
      * pokemonTableUpdate constructor.  Opens pokedex db connection
-     * @param array $pokemonJSONs contains a JSON for each pokemon
+     *
+     * @param array $pokemonDataList contains an array for each pokemon
      */
-    public function __construct(array $pokemonJSONs)
+    public function __construct(array $pokemonDataList)
     {
-        $this->db = new PDO('mysql:dbname=pokedex;host=127.0.0.1', 'root');
+        $this->db = new PDO('mysql:dbname=pokedex_hb;host=127.0.0.1', 'root');
         $this->db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-        $this->pokemonJSONs = $pokemonJSONs;
+        $this->pokemonDataList = $pokemonDataList;
     }
 
     /**
-     * Adds relevant values from each JSON to pokemon table in db
+     * Adds values from each array to pokemon table in db
      */
     public function dbUpdate()
     {
-        foreach ($this->pokemonJSONs as $JSON) {
-            $id = $JSON->id;
-            $name = $JSON->name;
-            $type_1 = $JSON->types[0]->type->name;
-            $type_2 = $JSON->types[1]->type->name;
+        foreach ($this->pokemonDataList as $pokemonData) {
+            $id = $pokemonData['id'];
+            $name = $pokemonData['name'];
+            $type_1 = $pokemonData['type_1'];
+            $type_2 = $pokemonData['type_2'];
             $query = $this->db->prepare('INSERT INTO pokemon VALUES (:id, :name, :type_1, :type_2);');
-            $query->execute([':id' => $id, ':name' => $name, ':type_1' => $type_1, ':type_2' => $type_2]);
+            $query->execute([
+                ':id' => $id,
+                ':name' => $name,
+                ':type_1' => $type_1,
+                ':type_2' => $type_2
+            ]);
         }
     }
 }
