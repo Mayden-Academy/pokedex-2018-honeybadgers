@@ -21,7 +21,8 @@ class Email extends AbstractEmail {
         $this->email = $email;
     }
 
-    /** Function allows the object to return the email address as a string
+    /**
+     * Function allows the object to return the email address as a string
      * @return string of the email address
      */
     public function __toString()
