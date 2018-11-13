@@ -6,6 +6,7 @@ use Pokedex\ValueObjects\Email;
 use Pokedex\Exceptions\EmailException;
 use Pokedex\User;
 use Pokedex\DbConnection;
+use Pokedex\ErrorLog;
 
 $userEmail = $_POST['tbc'] ?? FALSE; //$_POST['tbc'] needs to be replaced with actual input name
 
@@ -16,9 +17,7 @@ if ($userEmail) {
         header('Location:login.php?error=1'); // error1 invalid email address.
         exit();
     } catch (Exception $e) {
-        $errorLog = fopen('errorLog.txt', 'w');
-        fwrite($errorLog, $e->getMessage() . "\n");
-        fclose($errorLog);
+        ErrorLog::log($e->getMessage());
         header('Location:login.php?error=2'); //error2 should provide non specific message to user.
         exit();
     }

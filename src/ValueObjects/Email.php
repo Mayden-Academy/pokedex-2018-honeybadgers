@@ -11,7 +11,7 @@ class Email extends AbstractEmail {
 
     /**
      * Email constructor that validates the user email address
-     * @param $email string user defined email address
+     * @param string $email user defined email address
      * @throws EmailException
      */
     public function __construct(string $email) {
