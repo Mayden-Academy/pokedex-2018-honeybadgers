@@ -5,6 +5,7 @@ require_once ('vendor/autoload.php');
 use Pokedex\ValueObjects\Email;
 use Pokedex\Exceptions\EmailException;
 use Pokedex\User;
+use Pokedex\DbConnection;
 
 $userEmail = $_POST['tbc'] ?? FALSE; //$_POST['tbc'] needs to be replaced with actual input name
 
@@ -22,8 +23,9 @@ if ($userEmail) {
         exit();
     }
 
-    $user = new User($emailObj);
-    echo $emailObj;
+    $db = new DbConnection;
+    $db = $db->getDB();
+    $user = new User($emailObj, $db);
 
 } else {
     header('Location:login.php?error=3'); //no email detected
