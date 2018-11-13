@@ -1,5 +1,18 @@
 @import "imports/variables";
 
+body {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Cantarell', sans-serif;
+}
+
+@font-face {
+  font-family: Ketchum;
+  src: url('../fonts/Ketchum.otf');
+}
+
 #scroll {
   width: 80vw;
   background-color: $poke-red;
@@ -16,16 +29,15 @@ ul {
 .poke-container {
   width: 100%;
   background-color: $poke-blue;
-  height: 20vh;
+  height: 30vh;
 }
 
 .info {
-  width: 70%;
+  width: 65%;
   height: 100%;
   float: left;
   background-color: $poke-yellow;
-
-
+  padding-left: 5%;
 }
 
 .picture-holder {
@@ -33,12 +45,35 @@ ul {
   width: 30%;
   height: 100%;
   background-color: #222222;
-
 }
 
 .picture {
-  width: 18vh;
-  height: 18vh;
-  background-color: $poke-grey;
+  height: 100%;
   margin: auto;
+  display: block;
+}
+
+.type-holder {
+  width: 30%;
+  float: left;
+}
+
+.type {
+  display: block;
+  padding-bottom: 10%;
+}
+
+.poke-title {
+  width: 70%;
+  float: left;
+}
+
+.poke-id {
+  width: 30%;
+  float: left;
+}
+
+.poke-attributes {
+  width: 70%;
+  float: left;
 }
