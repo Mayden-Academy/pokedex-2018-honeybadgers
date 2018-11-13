@@ -6,7 +6,7 @@
 # https://github.com/sequelpro/sequelpro
 #
 # Host: 127.0.0.1 (MySQL 5.6.41)
-# Database: pokemon
+# Database: pokedex_hb
 # Generation Time: 2018-11-12 14:32:55 +0000
 # ************************************************************
 
