@@ -10,8 +10,14 @@ class Pokemon {
 
     public function __construct($id, $name, $types) {
 
+        if(!is_int($id)) {
+            throw new \Exception('expected integer in $id parameter, given ' . gettype($id) . ' instead.');
+        }
         $this->id = $id;
         $this->name = $name;
+        if (!is_array($types)) {
+            throw new \Exception('expected array in $types parameter, given ' . gettype($types) . ' instead.');
+        }
         $this->types = $types;
     }
 
