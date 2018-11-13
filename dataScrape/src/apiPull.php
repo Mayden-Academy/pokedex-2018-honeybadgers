@@ -9,7 +9,7 @@ class apiPull
      */
     public function __construct()
     {
-        for ($i = 1; $i <= 151; $i++)
+        for ($i = 1; $i <= 2; $i++)
         {
             $curl = curl_init();
 
