@@ -5,7 +5,7 @@
   src: url('../fonts/Ketchum.otf');
 }
 
-body {
+* {
   box-sizing: border-box;
 }
 
@@ -46,6 +46,7 @@ h2 {
 
 .poke-container.seen {
   background-color: darkslateblue;
+  border: 1px solid #222222;
 }
 
 .info {
@@ -100,7 +101,7 @@ h2 {
 
 .picture-holder {
   float: left;
-  width: 30%;
+  width: 35%;
   height: 100%;
 }
 
