@@ -6,7 +6,6 @@ use \PDO;
 class DbConnection
 {
     private $db;
-
     /**
      * DbConnection constructor creates new connection to the pokedex_hb database
      */

@@ -3,7 +3,6 @@ namespace Pokedex;
 
 class ErrorLog
 {
-
     private const ERROR_LOG = 'errorLog.txt';
 
     /** This logs messages to the error log

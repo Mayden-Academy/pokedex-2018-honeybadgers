@@ -9,30 +9,30 @@ require_once ('../../src/ValueObjects/Email.php');
 class UserTest extends TestCase {
 
     public function testUserExists(){
-        $mockPDO = $this->createMock(PDO::class); //create mock of database object e.g PDO::class
-        $mockStmt = $this->createMock(PDOStatement::class); //create a mock of stmt object which is used by the prepare method on line 18
+        $mockPDO = $this->createMock(PDO::class);
+        $mockStmt = $this->createMock(PDOStatement::class);
 
-        $mockStmt->method('execute')->willReturn(true); //mock these because these methods are called on stmt
-        $mockStmt->method('rowCount')->willReturn(1); //mock these because these methods are called on stmt
+        $mockStmt->method('execute')->willReturn(true);
+        $mockStmt->method('rowCount')->willReturn(1);
 
         $mockPDO->method('prepare')->willReturn($mockStmt);
 
-        $mockEmail = $this->createMock(Email::class); //mock the email address note lines 3,6,7
+        $mockEmail = $this->createMock(Email::class);
 
         $user = new User($mockEmail, $mockPDO);
         $this->assertInstanceOf(User::class, $user);
     }
 
     public function testUserDoesntExist(){
-        $mockPDO = $this->createMock(PDO::class); //create mock of database object e.g PDO::class
-        $mockStmt = $this->createMock(PDOStatement::class); //create a mock of stmt object which is used by the prepare method on line 18
+        $mockPDO = $this->createMock(PDO::class);
+        $mockStmt = $this->createMock(PDOStatement::class);
 
-        $mockStmt->method('execute')->willReturn(true); //mock these because these methods are called on stmt
-        $mockStmt->method('rowCount')->willReturn(0); //mock these because these methods are called on stmt
+        $mockStmt->method('execute')->willReturn(true);
+        $mockStmt->method('rowCount')->willReturn(0);
 
         $mockPDO->method('prepare')->willReturn($mockStmt);
 
-        $mockEmail = $this->createMock(Email::class); //mock the email address note lines 3,6,7
+        $mockEmail = $this->createMock(Email::class);
 
         $user = new User($mockEmail, $mockPDO);
         $this->assertInstanceOf(User::class, $user);
