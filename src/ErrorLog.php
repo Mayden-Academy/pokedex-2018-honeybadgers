@@ -5,7 +5,8 @@ class ErrorLog
 {
     private const ERROR_LOG = 'errorLog.txt';
 
-    /** This logs messages to the error log
+    /**
+     * This logs messages to the error log
      * @param string $error Message can be user defined or accessed from Exception object
      */
     public static function log(string $errorMessage) {
