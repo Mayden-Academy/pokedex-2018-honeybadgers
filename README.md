@@ -4,7 +4,8 @@
 
 Step 1: Set database IP address
 
-In 'dataScrape/apiPull.php', line 7, where pokemonTableUpdate is instantiated, change the second argument to the IP address of your database.
+In 'dataScrape/apiPull.php', change the IP_ADDRESS constant on line 7 to the address of your database, 
+if your database is not located at the default address.
 
 Step 2: Create database
 
