@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require_once ('vendor/autoload.php');
 
@@ -25,6 +26,9 @@ if ($userEmail) {
     $db = new DbConnection;
     $db = $db->getDB();
     $user = new User($emailObj, $db);
+
+    $_SESSION['loggedIn'] = TRUE;
+    header('Location:index.php');
 
 } else {
     header('Location:login.php?error=3'); //no email detected
