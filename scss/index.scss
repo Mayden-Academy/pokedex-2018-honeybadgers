@@ -35,18 +35,22 @@ h2 {
 .poke-container {
   width: 100%;
   height: 150px;
-  outline-style: solid;
-  outline-offset: -2px;
+  border: 1px solid #222222;
   background-color: $poke-grey;
 }
 
 .poke-container.caught {
-  background-color: hotpink;
+  color: $white;
+  background-color: $poke-blue;
+
+  .icon {
+    filter: initial;
+  }
+
 }
 
 .poke-container.seen {
-  background-color: darkslateblue;
-  border: 1px solid #222222;
+  background-color: $poke-green;
 }
 
 .info {
@@ -97,6 +101,8 @@ h2 {
 .icon {
   height: 80%;
   display: inline;
+  color: white;
+  filter: brightness(0);
 }
 
 .picture-holder {
