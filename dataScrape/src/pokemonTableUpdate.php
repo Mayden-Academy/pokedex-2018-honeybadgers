@@ -9,10 +9,11 @@ class pokemonTableUpdate
      * pokemonTableUpdate constructor.  Opens pokedex db connection
      *
      * @param array $pokemonDataList contains an array for each pokemon
+     * @param string $dbServerIP is the IP address of the database server
      */
-    public function __construct(array $pokemonDataList)
+    public function __construct(array $pokemonDataList, string $dbServerIP)
     {
-        $this->db = new PDO('mysql:dbname=pokedex_hb;host=127.0.0.1', 'root');
+        $this->db = new PDO('mysql:dbname=pokedex_hb;host=' . $dbServerIP, 'root');
         $this->db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
         $this->pokemonDataList = $pokemonDataList;
     }
