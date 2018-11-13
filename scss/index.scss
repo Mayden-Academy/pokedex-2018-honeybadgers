@@ -14,10 +14,11 @@ html {
 }
 
 #scroll {
-  width: 80vw;
+  width: 70vw;
   background-color: $poke-red;
   height: 85vh;
   margin: 0 auto;
+  overflow: auto;
 }
 
 ul {
@@ -26,43 +27,30 @@ ul {
   padding: 0;
 }
 
+h2 {
+  margin-bottom: 0;
+  margin-top: 2%;
+
+}
+
 .poke-container {
   width: 100%;
-  background-color: $poke-blue;
-  height: 30vh;
+  height: 20vh;
+  outline-style: solid;
+  outline-offset: -2px;
 }
 
 .info {
   width: 65%;
   height: 100%;
   float: left;
-  background-color: $poke-yellow;
+  background-color: $poke-grey;
   padding-left: 5%;
 }
 
-.picture-holder {
-  float: left;
-  width: 30%;
-  height: 100%;
-  background-color: #222222;
+.upper {
+  height: 30%;
 }
-
-.picture {
-  height: 100%;
-  margin: auto;
-  display: block;
-}
-
-.type-holder {
-  width: 30%;
-  float: left;
-}
-
-.type {
-  display: block;
-  padding-bottom: 10%;
-}
-
 .poke-title {
   width: 70%;
   float: left;
@@ -73,7 +61,57 @@ ul {
   float: left;
 }
 
-.poke-attributes {
-  width: 70%;
+.lower {
+  height: 70%;
+}
+
+.type-holder {
+  width: 20%;
   float: left;
+  height: 100%;
+  font-size: 1.2rem;
+}
+
+.poke-attributes {
+  width: 80%;
+  height: 100%;
+  float: left;
+  text-align: center;
+
+}
+
+.icon-container {
+  float: left;
+  height: 40%;
+  padding: 3% 12% 0 12%;
+}
+
+.icon {
+  height: 80%;
+  display: inline;
+}
+
+.picture-holder {
+  float: left;
+  width: 30%;
+  height: 100%;
+  background-color: $poke-grey;
+}
+
+.picture {
+  height: 100%;
+  margin: auto;
+  display: block;
+}
+
+footer {
+  width: 70vw;
+  height: 15vh;
+  margin: auto;
+}
+
+#save {
+  float: right;
+  margin-top: 1%;
+
 }

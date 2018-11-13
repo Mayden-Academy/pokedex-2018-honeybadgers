@@ -18,37 +18,41 @@
             <ul>
                 <li class="poke-container">
                     <div class="info">
-                        <h2 class="poke-title">Name of Pokemon</h2>
-                        <h2 class="poke-id">#55</h2>
-                        <ul class="type-holder">
-                            <li>
-                                <span class="type">type</span>
-                                <span class="type">type</span>
-                            </li>
-                        </ul>
-                        <div class="poke-attributes">
-                            <span>
-                                <img src="">
-                                <span>0</span>
-                            </span>
-                            <span>
-                                <img src="">
-                                <span>0</span>
-                            </span>
-                            <span>
-                                <img src="">
-                                <span>0</span>
-                            </span>
+                        <div class="upper">
+                            <h2 class="poke-title">Name of Pokemon</h2>
+                            <h2 class="poke-id">#55</h2>
+                        </div>
+                        <div class="lower">
+                            <div class="type-holder">
+                                <p class="type">type</p>
+                                <p class="type">type</p>
+                            </div>
+                                <div class="poke-attributes">
+                                    <div class="icon-container">
+                                        <img src="img/Eye_closed.svg" class="icon">
+                                        <p>0</p>
+                                    </div>
+                                    <div class="icon-container">
+                                        <img src="img/Eye_opened.svg" class="icon">
+                                        <p>0</p>
+                                    </div>
+                                    <div class="icon-container">
+                                        <img src="img/pokeball-2.svg" class="icon">
+                                        <p>0</p>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                     <div class="picture-holder">
-                            <img src="https://pokeres.bastionbot.org/images/pokemon/55.png" class="picture">
+                            <img src="https://pokeres.bastionbot.org/images/pokemon/1.png" class="picture">
                     </div>
 
                 </li>
             </ul>
         </div>
-        <input type="submit" placeholder="Save">
+        <footer>
+            <input type="submit" value="Save" id="save">
+        </footer>
     </form>
 </main>
 
