@@ -37,13 +37,21 @@ h2 {
   height: 150px;
   outline-style: solid;
   outline-offset: -2px;
+  background-color: $poke-grey;
+}
+
+.poke-container.caught {
+  background-color: hotpink;
+}
+
+.poke-container.seen {
+  background-color: darkslateblue;
 }
 
 .info {
   width: 65%;
   height: 100%;
   float: left;
-  background-color: $poke-grey;
   padding-left: 5%;
 }
 
@@ -94,7 +102,6 @@ h2 {
   float: left;
   width: 30%;
   height: 100%;
-  background-color: $poke-grey;
 }
 
 .picture {
