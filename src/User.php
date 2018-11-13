@@ -6,6 +6,11 @@ class User
 {
     private $email;
 
+    /**
+     * User constructor that checks if email address exists in the database.  Adds email address if it does not exist.
+     * @param AbstractEmail $email the validated email address from the user
+     * @param $db the database connection
+     */
     public function __construct(AbstractEmail $email, $db)
     {
         $this->email = $email;
@@ -18,10 +23,5 @@ class User
             $stmt = $db->prepare('INSERT INTO `users` (`email`) VALUES (:email);');
             $stmt->execute(['email'=>$this->email]);
         }
-
     }
-
-
-
-
 }
