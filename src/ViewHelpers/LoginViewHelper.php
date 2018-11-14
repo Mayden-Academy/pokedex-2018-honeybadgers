@@ -11,12 +11,10 @@ class LoginViewHelper
                 case 1:
                     return 'Your email address is invalid';
                     break;
-                case 2:
-                    return 'An unknown error has occurred. Please try again.';
-                    break;
                 case 3:
                     return 'An email address is required';
                     break;
+                case 2:
                 default:
                     return 'An unknown error has occurred. Please try again.';
                     break;
@@ -24,5 +22,4 @@ class LoginViewHelper
         }
 
     }
-
 }
