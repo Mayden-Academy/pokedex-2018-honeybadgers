@@ -7,18 +7,17 @@ require_once ('../../../src/ViewHelpers/LoginViewHelper.php');
 class TestLoginViewHelper extends TestCase
 {
 
-    public $get = [
-        'error' => 1
-    ];
-
     public function testOutputErrorSuccess() {
-        $errorMessage = LoginViewHelper::outputError($this->get);
+        $errorMessage = LoginViewHelper::outputError(['error' => 1]);
         $this->assertEquals('Your email address is invalid', $errorMessage);
+        $errorMessage = LoginViewHelper::outputError(['error' => 2]);
+        $this->assertEquals('An unknown error has occurred. Please try again.', $errorMessage);
+        $errorMessage = LoginViewHelper::outputError(['error' => 3]);
+        $this->assertEquals('An email address is required', $errorMessage);
     }
 
     public function testOutputErrorFailure() {
-        $get = ['error' => 'gibberish'];
-        $errorMessage = LoginViewHelper::outputError($get);
+        $errorMessage = LoginViewHelper::outputError(['error' => 'gibberish']);
         $this->assertEquals('An unknown error has occurred. Please try again.', $errorMessage);
     }
 
