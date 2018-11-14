@@ -44,7 +44,7 @@ class Pokemon
     }
 
     /**
-     * @return mixed The pokemon's second type.
+     * @return string The pokemon's second type.
      */
     public function getType2()
     {
