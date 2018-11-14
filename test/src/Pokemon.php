@@ -12,7 +12,6 @@ class PokemonTest extends TestCase {
     public $pokemon;
 
     public function setUp() {
-
         $this->pokemon = new Pokemon(1, 'Bulbasaur', ['poison', 'grass']);
     }
 

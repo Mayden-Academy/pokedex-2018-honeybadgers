@@ -16,16 +16,16 @@ class Pokemon {
      * @param int $id The pokemon's id.
      * @param string $name The pokemon's name.
      * @param array $types $types The pokemon's types.
-     *
      */
     public function __construct(int $id, string $name, array $types) {
-
         $this->id = $id;
         $this->name = $name;
         $this->types = $types;
     }
 
     /**
+     * Returns any property if it exists.  Otherwise, throws a PokemonException
+     *
      * @param string $propertyName The property the caller is trying to access.
      * @return mixed the value belonging to the given property.
      * @throws PokemonException if the property does not exist on the class.
