@@ -5,7 +5,8 @@ namespace Pokedex\ValueObjects;
 use Pokedex\AbstractEmail;
 use Pokedex\Exceptions\EmailException;
 
-class Email extends AbstractEmail {
+class Email extends AbstractEmail
+{
 
     private $email;
 
