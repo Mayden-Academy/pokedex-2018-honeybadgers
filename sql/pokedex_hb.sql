@@ -23,12 +23,12 @@ DROP TABLE IF EXISTS `pokemon`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pokemon` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL DEFAULT '',
-  `type_1` varchar(255) NOT NULL DEFAULT '',
-  `type_2` varchar(255) DEFAULT NULL,
+  `id` tinyint(3) unsigned NOT NULL,
+  `name` varchar(20) NOT NULL DEFAULT '',
+  `type_1` varchar(20) NOT NULL DEFAULT '',
+  `type_2` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=152 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,8 +40,12 @@ DROP TABLE IF EXISTS `status`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `status` (
   `user_id` int(11) unsigned NOT NULL,
-  `pokemon_id` int(11) unsigned NOT NULL,
-  `seen_caught` int(1) unsigned NOT NULL
+  `pokemon_id` tinyint(4) unsigned NOT NULL,
+  `seen_caught` bit(1) DEFAULT NULL COMMENT 'NULL unseen, 0 seen, 1 caught',
+  UNIQUE KEY `user_pokemon` (`user_id`,`pokemon_id`) USING BTREE,
+  KEY `pokemon_id` (`pokemon_id`),
+  CONSTRAINT `status_ibfk_4` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  CONSTRAINT `status_ibfk_5` FOREIGN KEY (`pokemon_id`) REFERENCES `pokemon` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -57,7 +61,7 @@ CREATE TABLE `users` (
   `email` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -73,4 +77,4 @@ CREATE TABLE `users` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-11-13 13:41:27
+-- Dump completed on 2018-11-14 13:24:27
