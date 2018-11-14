@@ -14,7 +14,8 @@ class Email extends AbstractEmail {
      * @param string $email user defined email address
      * @throws EmailException
      */
-    public function __construct(string $email) {
+    public function __construct(string $email)
+    {
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             throw new EmailException('Invalid email address');
         }
