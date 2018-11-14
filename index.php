@@ -10,21 +10,26 @@
     <title>Pokédex</title>
 </head>
 <body>
-<main>
-    <form>
-        <div id="scroll">
-            <ul>
-                <li class="poke-container">
-                    <div class="info">
-                        <div class="upper">
-                            <h2 class="poke-title">Pikachu</h2>
-                            <h2 class="poke-id">#25</h2>
-                        </div>
-                        <div class="lower">
-                            <div class="type-holder">
-                                <p class="type">type</p>
-                                <p class="type">type</p>
+    <main>
+        <form action="index.php">
+            <input type="search" placeholder="Search by name">
+            <input type="submit">
+        </form>
+        <button
+        <form>
+            <div id="scroll">
+                <ul>
+                    <li class="poke-container">
+                        <div class="info">
+                            <div class="upper">
+                                <h2 class="poke-title">Pikachu</h2>
+                                <h2 class="poke-id">#25</h2>
                             </div>
+                            <div class="lower">
+                                <div class="type-holder">
+                                    <p class="type">type</p>
+                                    <p class="type">type</p>
+                                </div>
                                 <div class="poke-attributes">
                                     <div class="icon-container">
                                         <img src="img/Eye_closed.svg" class="icon">
@@ -39,18 +44,18 @@
                                         <p>0</p>
                                     </div>
                                 </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="picture-holder">
+                        <div class="picture-holder">
                             <img src="https://pokeres.bastionbot.org/images/pokemon/25.png" class="picture">
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <footer>
-            <input type="submit" value="Save" id="save">
-        </footer>
-    </form>
-</main>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <footer>
+                <input type="submit" value="Save" id="save">
+            </footer>
+        </form>
+    </main>
 </body>
 </html>

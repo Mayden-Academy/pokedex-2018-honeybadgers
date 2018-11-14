@@ -13,11 +13,14 @@ html {
   font-family: 'Cantarell', sans-serif;
 }
 
+main {
+    width: 1000px;
+    margin: 0 auto;
+}
+
 #scroll {
-  width: 1000px;
   background-color: $mine-shaft-grey;
   height: 700px;
-  margin: 0 auto;
   overflow: auto;
 }
 
