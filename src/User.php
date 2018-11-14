@@ -1,7 +1,5 @@
 <?php
 namespace Pokedex;
-
-
 class User
 {
     private $email;
