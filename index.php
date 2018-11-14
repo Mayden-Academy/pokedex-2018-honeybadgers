@@ -12,7 +12,7 @@ if(isset($_GET['search'])) {
 }
 
 $db = new DbConnection();
-$pokeList = new PokeList($db->getDB());
+$pokeList = new PokeList($db->getDB(), $search);
 
 ?>
 <!DOCTYPE html>
