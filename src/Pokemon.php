@@ -13,7 +13,7 @@ class Pokemon
 
     public function __construct()
     {
-        //capitalises first letter of each string, because it being lowercase looks wroooong
+        //capitalises first letter of each string for more professional appearance
         $this->name = ucfirst($this->name);
         $this->type_1 = ucfirst($this->type_1);
         $this->type_2 = ucfirst($this->type_2);
