@@ -6,7 +6,7 @@
  * Time: 11:48
  */
 
-namespace Pokedex\ValueObjects;
+namespace Pokedex;
 
 use Pokedex\DbConnection;
 
