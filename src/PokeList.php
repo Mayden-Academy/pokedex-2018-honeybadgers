@@ -16,7 +16,7 @@ class PokeList {
 
     /**
      * Creates a new pokeList using a DBConnection
-     * @param \Pokedex\DbConnection $connection The particular connection to use for retrieving the list of pokemon.
+     * @param \PDO $connection The particular database object to use for retrieving the list of pokemon.
      */
     public function __construct(\PDO $connection)
     {
