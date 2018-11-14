@@ -2,7 +2,8 @@
 
 namespace Pokedex;
 
-class Pokemon {
+class Pokemon
+{
 
     private $id;
     private $name;
