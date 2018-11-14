@@ -19,7 +19,7 @@
     </form>
     <p class="login-error">
         <?php
-        if(isset($_GET['error'])) {
+        if (isset($_GET['error'])) {
             switch ($_GET['error']) {
                 case 1:
                     echo 'Your email address is invalid';
