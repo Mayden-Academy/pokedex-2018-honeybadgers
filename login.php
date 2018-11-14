@@ -1,3 +1,10 @@
+<?php
+require_once ('vendor/autoload.php');
+
+use Pokedex\ViewHelpers\LoginViewHelper;
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,21 +25,7 @@
         <input class="loginbutton" type="submit" value="Login">
     </form>
     <p class="login-error">
-        <?php
-        if (isset($_GET['error'])) {
-            switch ($_GET['error']) {
-                case 1:
-                    echo 'Your email address is invalid';
-                    break;
-                case 2:
-                    echo 'An unknown error has occurred';
-                    break;
-                case 3:
-                    echo 'An email address is required';
-                    break;
-            }
-        }
-        ?>
+        <?php echo LoginViewHelper::outputError($_GET); ?>
     </p>
 </main>
 </body>
