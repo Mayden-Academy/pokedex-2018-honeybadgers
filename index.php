@@ -5,7 +5,8 @@ require_once ('vendor/autoload.php');
 use Pokedex\DbConnection;
 use Pokedex\PokeList;
 
-$pokeList = new PokeList(new DbConnection());
+$db = new DbConnection();
+$pokeList = new PokeList($db->getDB());
 
 ?>
 <!DOCTYPE html>
