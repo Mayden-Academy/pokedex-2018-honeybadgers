@@ -16,9 +16,9 @@ class PokeList {
      * Creates a new pokeList using a DBConnection
      * @param \PDO $connection The particular database object to use for retrieving the list of pokemon.
      */
-    public function __construct(\PDO $connection)
+    public function __construct(\PDO $db)
     {
-        $stmt = $connection->prepare('SELECT `id`, `name`, `type_1`, `type_2` FROM `pokemon`');
+        $stmt = $db->prepare('SELECT `id`, `name`, `type_1`, `type_2` FROM `pokemon`');
         $stmt->execute();
         $this->pokemon = $stmt->fetchAll(\PDO::FETCH_CLASS, 'Pokedex\Pokemon');
     }
