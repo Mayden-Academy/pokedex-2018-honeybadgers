@@ -25,20 +25,26 @@
                                 <p class="type">type</p>
                                 <p class="type">type</p>
                             </div>
-                                <div class="poke-attributes">
-                                    <div class="icon-container">
+                            <div class="poke-attributes">
+                                <div class="icon-container">
+                                    <label for="unseen">
                                         <img src="img/Eye_closed.svg" class="icon">
-                                        <p>0</p>
-                                    </div>
-                                    <div class="icon-container">
-                                        <img src="img/Eye_opened.svg" class="icon">
-                                        <p>0</p>
-                                    </div>
-                                    <div class="icon-container">
-                                        <img src="img/pokeball-2.svg" class="icon">
-                                        <p>0</p>
-                                    </div>
+                                        <input type="radio" name="status" value="unseen" id="unseen">
+                                    </label>
                                 </div>
+                                <div class="icon-container">
+                                    <label for="seen">
+                                        <img src="img/Eye_opened.svg" class="icon">
+                                        <input type="radio" name="status" value="seen" id="seen">
+                                    </label>
+                                </div>
+                                <div class="icon-container">
+                                    <label for="caught">
+                                        <img src="img/pokeball-2.svg" class="icon">
+                                        <input type="radio" name="status" value="caught" id="caught">
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="picture-holder">
