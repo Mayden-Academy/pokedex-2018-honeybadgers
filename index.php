@@ -24,20 +24,6 @@
                                 <p class="type">type</p>
                                 <p class="type">type</p>
                             </div>
-                            <div class="poke-attributes">
-                                <div class="icon-container">
-                                    <img src="img/Eye_closed.svg" class="icon">
-                                    <span>0</span>
-                                </div>
-                                <div class="icon-container">
-                                    <img src="img/Eye_opened.svg" class="icon">
-                                    <span>0</span>
-                                </div>
-                                <div class="icon-container">
-                                    <img src="img/pokeball-2.svg" class="icon">
-                                    <span>0</span>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="picture-holder">
