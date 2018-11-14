@@ -1,0 +1,31 @@
+<li class="poke-container">
+    <div class="info">
+        <div class="upper">
+            <h2 class="poke-title"><?php echo $pokemon->getName(); ?></h2>
+            <h2 class="poke-id">#<?php echo $pokemon->getId(); ?></h2>
+        </div>
+        <div class="lower">
+            <div class="type-holder">
+                <p class="type"><?php echo $pokemon->getType1(); ?></p>
+                <p class="type"><?php echo $pokemon->getType2(); ?></p>
+            </div>
+            <div class="poke-attributes">
+                <div class="icon-container">
+                    <img src="img/Eye_closed.svg" class="icon">
+                    <p>0</p>
+                </div>
+                <div class="icon-container">
+                    <img src="img/Eye_opened.svg" class="icon">
+                    <p>0</p>
+                </div>
+                <div class="icon-container">
+                    <img src="img/pokeball-2.svg" class="icon">
+                    <p>0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="picture-holder">
+        <img src="https://pokeres.bastionbot.org/images/pokemon/<?php echo $pokemon->getID() ?>.png" class="picture">
+    </div>
+</li>
