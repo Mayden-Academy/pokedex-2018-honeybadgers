@@ -1,4 +1,12 @@
 <?php
+
+require_once ('vendor/autoload.php');
+
+use Pokedex\DbConnection;
+use Pokedex\PokeList;
+
+$pokeList = new PokeList(new DbConnection());
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +22,11 @@
         <form>
             <div id="scroll">
                 <ul>
-                    <?php templater ?>
+                    <?php
+                        foreach ($pokeList->getPokemon() as $pokemon) {
+                            echo require 'pokemonEntryTemplate.phtml';
+                        }
+                    ?>
                 </ul>
             </div>
             <footer>
