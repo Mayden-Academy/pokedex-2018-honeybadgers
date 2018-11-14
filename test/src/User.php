@@ -3,7 +3,7 @@ use PHPUnit\Framework\TestCase;
 use Pokedex\ValueObjects\Email;
 use Pokedex\User;
 require_once ('../../src/User.php');
-require_once ('../../src/AbstractEmail.php');
+require_once ('../../src/Abstracts/AbstractEmail.php');
 require_once ('../../src/ValueObjects/Email.php');
 
 class UserTest extends TestCase {

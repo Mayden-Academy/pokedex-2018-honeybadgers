@@ -2,7 +2,7 @@
 
 namespace Pokedex\ValueObjects;
 
-use Pokedex\AbstractEmail;
+use Pokedex\Abstracts\AbstractEmail;
 use Pokedex\Exceptions\EmailException;
 
 class Email extends AbstractEmail

@@ -1,5 +1,7 @@
 <?php
 namespace Pokedex;
+
+use \Pokedex\Abstracts\AbstractEmail;
 class User
 {
     private $email;
