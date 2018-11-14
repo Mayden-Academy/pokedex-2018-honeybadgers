@@ -5,6 +5,12 @@ require_once ('vendor/autoload.php');
 use Pokedex\DbConnection;
 use Pokedex\PokeList;
 
+$search = '%%';
+
+if(isset($_GET['search'])) {
+    $search = '%' . $_GET['search'] . '%';
+}
+
 $db = new DbConnection();
 $pokeList = new PokeList($db->getDB());
 
