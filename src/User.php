@@ -1,7 +1,8 @@
 <?php
 namespace Pokedex;
 
-use \Pokedex\Abstracts\AbstractEmail;
+use Pokedex\Abstracts\AbstractEmail;
+
 class User
 {
     private $email;
@@ -15,13 +16,18 @@ class User
     {
         $this->email = $email;
 
-        $stmt = $db->prepare('SELECT `id`, `email` FROM `users` WHERE `email` = :email;');
-        $stmt->execute([':email' => $this->email]);
-        $count = $stmt->rowCount();
+        try {
+            $stmt = $db->prepare('SELECT `id`, `email` FROM `users` WHERE `email` = :email;');
+            $stmt->execute([':email' => $this->email]);
+            $count = $stmt->rowCount();
 
-        if (!$count) {
-            $stmt = $db->prepare('INSERT INTO `users` (`email`) VALUES (:email);');
-            $stmt->execute(['email'=>$this->email]);
+            if (!$count) {
+                $stmt = $db->prepare('INSERT INTO `users` (`email`) VALUES (:email);');
+                $stmt->execute(['email'=>$this->email]);
+            }
+        } catch (\Exception $e) {
+            ErrorLog::log($e->getMessage());
+            header('Location:login.php?error=2');
         }
     }
 }
