@@ -21,6 +21,9 @@ class Pokemon {
         $this->id = $id;
         $this->name = $name;
         $this->types = $types;
+        if ($this->types[1] === NULL) {
+            array_pop($this->types);
+        }
     }
 
     /**
