@@ -27,15 +27,15 @@
                             <div class="poke-attributes">
                                 <div class="icon-container">
                                     <img src="img/Eye_closed.svg" class="icon">
-                                    <input type="radio" name="status_id1">
+                                    <span>0</span>
                                 </div>
                                 <div class="icon-container">
                                     <img src="img/Eye_opened.svg" class="icon">
-                                    <input type="radio" name="status_id1">
+                                    <span>0</span>
                                 </div>
                                 <div class="icon-container">
                                     <img src="img/pokeball-2.svg" class="icon">
-                                    <input type="radio" name="status_id1">
+                                    <span>0</span>
                                 </div>
                             </div>
                         </div>
