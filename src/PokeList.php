@@ -8,8 +8,6 @@
 
 namespace Pokedex;
 
-use Pokedex\DbConnection;
-
 class PokeList {
 
     private $pokemon;
