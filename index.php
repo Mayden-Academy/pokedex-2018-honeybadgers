@@ -27,27 +27,25 @@
                             <div class="poke-attributes">
                                 <div class="icon-container">
                                     <img src="img/Eye_closed.svg" class="icon">
-                                    <input type="radio" name="status">
+                                    <input type="radio" name="status_id1">
                                 </div>
                                 <div class="icon-container">
                                     <img src="img/Eye_opened.svg" class="icon">
-                                    <input type="radio" name="status">
+                                    <input type="radio" name="status_id1">
                                 </div>
                                 <div class="icon-container">
                                     <img src="img/pokeball-2.svg" class="icon">
-                                    <input type="radio" name="status">
+                                    <input type="radio" name="status_id1">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="picture-holder">
-                            <img src="https://pokeres.bastionbot.org/images/pokemon/25.png" class="picture">
+                        <img src="https://pokeres.bastionbot.org/images/pokemon/25.png" class="picture">
                     </div>
                 </li>
             </ul>
-            <footer>
-                <input type="submit" value="Save" id="save">
-            </footer>
+            <input type="submit" value="Save" id="save">
         </form>
     </main>
 </body>
