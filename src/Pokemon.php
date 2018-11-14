@@ -9,6 +9,14 @@ class Pokemon {
     private $type_1;
     private $type_2;
 
+
+    public function __construct() {
+        //capitalises first letter of each string, because it being lowercase looks wroooong
+        $this->name = ucfirst($this->name);
+        $this->type_1 = ucfirst($this->type_1);
+        $this->type_2 = ucfirst($this->type_2);
+    }
+
     /**
      * @return int The pokemon's ID.
      */
