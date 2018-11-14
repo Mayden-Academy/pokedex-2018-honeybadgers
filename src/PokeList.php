@@ -12,7 +12,7 @@ use Pokedex\DbConnection;
 
 class PokeList {
 
-    private $list;
+    private $pokemon;
 
     /**
      * Creates a new pokeList using a DBConnection
@@ -22,7 +22,7 @@ class PokeList {
     {
         $stmt = $connection->prepare('SELECT `id`, `name`, `type_1`, `type_2` FROM `pokemon`');
         $stmt->execute();
-        $this->list = $stmt->fetchAll(\PDO::FETCH_CLASS, 'Pokedex\Pokemon');
+        $this->pokemon = $stmt->fetchAll(\PDO::FETCH_CLASS, 'Pokedex\Pokemon');
     }
 
     /**
@@ -30,6 +30,6 @@ class PokeList {
      */
     public function getPokemon() : array
     {
-        return $this->list;
+        return $this->pokemon;
     }
 }
