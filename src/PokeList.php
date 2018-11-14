@@ -28,7 +28,8 @@ class PokeList {
     /**
      * @return array Returns an array containing the pokemon.
      */
-    public function getPokemon() : array {
+    public function getPokemon() : array
+    {
         return $this->list;
     }
 }
