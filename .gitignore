@@ -1,0 +1,7 @@
+.idea/
+node_modules/
+css/pokestyles.css
+.DS_Store
+errorLog.txt
+vendor/
+css/index.css
