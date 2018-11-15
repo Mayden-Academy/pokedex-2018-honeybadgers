@@ -24,7 +24,7 @@ class Pokemon
     /**
      * @return int The pokemon's ID.
      */
-    public function getId()
+    public function getId() : string
     {
         return $this->id;
     }
@@ -32,7 +32,7 @@ class Pokemon
     /**
      * @return string The pokemon's name.
      */
-    public function getName()
+    public function getName() : string
     {
         return $this->name;
     }
@@ -40,7 +40,7 @@ class Pokemon
     /**
      * @return string The pokemon's first type.
      */
-    public function getType1()
+    public function getType1() : string
     {
         return $this->type_1;
     }
@@ -48,7 +48,7 @@ class Pokemon
     /**
      * @return string The pokemon's second type.
      */
-    public function getType2()
+    public function getType2() : string
     {
         return $this->type_2;
     }
