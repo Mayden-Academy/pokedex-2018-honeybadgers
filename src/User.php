@@ -6,7 +6,7 @@ use Pokedex\Abstracts\AbstractEmail;
 class User
 {
     private $email;
-    private $id;
+    private $userID;
 
     /**
      * User constructor that checks if email address exists in the database.  Adds email address if it does not exist.
@@ -20,15 +20,13 @@ class User
         try {
             $stmt = $db->prepare('SELECT `id`, `email` FROM `users` WHERE `email` = :email;');
             $stmt->execute([':email' => $this->email]);
-            $count = $stmt->rowCount();
-
-            if (!$count) {
+            $data = $stmt->fetch();
+            $this->userID = $data['id'];
+            if (empty($data)) {
                 $stmt = $db->prepare('INSERT INTO `users` (`email`) VALUES (:email);');
                 $stmt->execute(['email'=>$this->email]);
+                $this->userID = $db->lastInsertId();
             }
-
-            $this->id = (int)$stmt->fetch()['id'];
-
         } catch (\Exception $e) {
             ErrorLog::log($e->getMessage());
             header('Location:login.php?error=2');
@@ -36,10 +34,10 @@ class User
     }
 
     /**
-     * @return int The ID of the this user in the database.
+     * @return int The user's ID.
      */
-    public function getId()
+    public function getUserID(): int
     {
-        return $this->id;
+        return $this->userID;
     }
 }
