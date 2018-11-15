@@ -13,6 +13,7 @@ if(isset($_GET['search'])) {
 
 $db = new DbConnection();
 $pokeList = new PokeList($db->getDB(), $search);
+
 session_start();
 
 if (!$_SESSION['loggedIn']) {

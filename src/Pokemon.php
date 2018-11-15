@@ -2,17 +2,20 @@
 
 namespace Pokedex;
 
-class Pokemon {
+class Pokemon
+{
 
     private $id;
     private $name;
     private $type_1;
     private $type_2;
 
-
+/**
+ *  Function constructs the class with setting name, type_1, type_2 properties,
+ * and capitalises first letter of each property.
+ */
     public function __construct()
     {
-        //capitalises first letter of each string, because it being lowercase looks wroooong
         $this->name = ucfirst($this->name);
         $this->type_1 = ucfirst($this->type_1);
         $this->type_2 = ucfirst($this->type_2);
@@ -21,7 +24,7 @@ class Pokemon {
     /**
      * @return int The pokemon's ID.
      */
-    public function getId()
+    public function getId() : string
     {
         return $this->id;
     }
@@ -29,7 +32,7 @@ class Pokemon {
     /**
      * @return string The pokemon's name.
      */
-    public function getName()
+    public function getName() : string
     {
         return $this->name;
     }
@@ -37,15 +40,15 @@ class Pokemon {
     /**
      * @return string The pokemon's first type.
      */
-    public function getType1()
+    public function getType1() : string
     {
         return $this->type_1;
     }
 
     /**
-     * @return mixed The pokemon's second type.
+     * @return string The pokemon's second type.
      */
-    public function getType2()
+    public function getType2() : string
     {
         return $this->type_2;
     }

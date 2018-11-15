@@ -1,21 +1,20 @@
 <?php
-
 namespace Pokedex;
 
 class PokeList {
 
-    private $list;
+    private $pokemonList;
 
     /**
      * Creates a new pokeList using a DBConnection
      * @param \PDO $connection The particular database object to use for retrieving the list of pokemon.
      */
-    public function __construct(\PDO $connection, string $searchTerm = '%%')
+    public function __construct(\PDO $db, string $searchTerm = '%%')
     {
-        $stmt = $connection->prepare("SELECT `id`, `name`, `type_1`, `type_2` FROM `pokemon` WHERE `name` LIKE :search");
+        $stmt = $db->prepare("SELECT `id`, `name`, `type_1`, `type_2` FROM `pokemon` WHERE `name` LIKE :search");
         $stmt->bindParam(":search", $searchTerm);
         $stmt->execute();
-        $this->list = $stmt->fetchAll(\PDO::FETCH_CLASS, 'Pokedex\Pokemon');
+        $this->pokemonList = $stmt->fetchAll(\PDO::FETCH_CLASS, 'Pokedex\Pokemon');
     }
 
     /**
@@ -23,6 +22,6 @@ class PokeList {
      */
     public function getPokemon() : array
     {
-        return $this->list;
+        return $this->pokemonList;
     }
 }
