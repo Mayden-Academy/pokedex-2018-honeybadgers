@@ -31,7 +31,7 @@ $pokeList = new PokeList($db->getDB(), $_SESSION['userID']);
         <ul>
             <?php
             foreach ($pokeList->getPokemon() as $pokemon) {
-                echo require 'pokemonEntryTemplate.phtml';
+                require 'pokemonEntryTemplate.phtml';
             }
             ?>
         </ul>
