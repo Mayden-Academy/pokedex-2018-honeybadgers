@@ -14,11 +14,11 @@ use Pokedex\PokeList;
 $dbConnection = new DbConnection();
 $pokeList = new PokeList($dbConnection->getDB());
 
-$userID = 1;
+$userID = (int)$_SESSION['id'];
 
 
-if (!empty($_GET)) {
-    foreach ($_GET as $query => $status) {
+if (!empty($_POST)) {
+    foreach ($_POST as $query => $status) {
         $pokemonID = explode('_', $query)[1];
         $status = ($status == '' ? NULL : $status);
         $sql = 'INSERT INTO status (user_id, pokemon_id, seen_caught) VALUES (:user_id, :pokemon_id, :seen_caught)
@@ -47,7 +47,7 @@ if (!empty($_GET)) {
 </head>
 <body>
 <main>
-    <form>
+    <form method="post">
         <div id="scroll">
             <ul>
                 <?php
