@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.6.41)
 # Database: pokedex_hb
-# Generation Time: 2018-11-15 14:47:44 +0000
+# Generation Time: 2018-11-15 14:54:20 +0000
 # ************************************************************
 
 
@@ -18,6 +18,21 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+# Dump of table pokemon
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `pokemon`;
+
+CREATE TABLE `pokemon` (
+  `id` tinyint(3) unsigned NOT NULL,
+  `name` varchar(20) NOT NULL DEFAULT '',
+  `type_1` varchar(20) NOT NULL DEFAULT '',
+  `type_2` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 
 # Dump of table status
@@ -35,50 +50,20 @@ CREATE TABLE `status` (
   CONSTRAINT `status_ibfk_5` FOREIGN KEY (`pokemon_id`) REFERENCES `pokemon` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-LOCK TABLES `status` WRITE;
-/*!40000 ALTER TABLE `status` DISABLE KEYS */;
 
-INSERT INTO `status` (`user_id`, `pokemon_id`, `seen_caught`)
-VALUES
-	(1,1,NULL),
-	(1,2,0),
-	(1,3,1),
-	(1,4,1),
-	(1,5,1),
-	(1,6,1),
-	(1,7,NULL),
-	(1,8,1),
-	(1,9,0),
-	(1,10,1),
-	(2,1,NULL),
-	(2,2,1),
-	(2,3,1),
-	(2,47,1),
-	(2,48,1),
-	(2,49,1),
-	(2,50,1),
-	(2,51,0),
-	(2,53,1),
-	(2,54,1),
-	(2,56,1),
-	(2,57,1),
-	(2,63,1),
-	(2,64,1),
-	(2,65,1),
-	(2,129,1),
-	(2,130,0),
-	(3,1,NULL),
-	(3,2,NULL),
-	(3,3,NULL),
-	(3,112,1),
-	(3,113,1),
-	(3,114,1),
-	(3,115,1),
-	(3,117,1),
-	(3,118,1);
 
-/*!40000 ALTER TABLE `status` ENABLE KEYS */;
-UNLOCK TABLES;
+# Dump of table users
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `users`;
+
+CREATE TABLE `users` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 
 
