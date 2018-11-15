@@ -36,7 +36,11 @@ class User
         }
     }
 
-    public function getUserID() {
+    /**
+     * @return int The user's ID.
+     */
+    public function getUserID()
+    {
         return $this->userID;
     }
 
