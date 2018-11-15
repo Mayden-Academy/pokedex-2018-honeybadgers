@@ -8,6 +8,11 @@ use Pokedex\PokeList;
 $db = new DbConnection();
 $pokeList = new PokeList($db->getDB());
 
+session_start();
+
+if (!$_SESSION['loggedIn']) {
+    header('Location:login.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
