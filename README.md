@@ -4,7 +4,7 @@
 
 Step 1: Set database IP address
 
-In 'dataScrape/apiPull.php', change the IP_ADDRESS constant on line 7 to the address of your database, 
+In 'dataScrape/ApiPull.php', change the IP_ADDRESS constant on line 7 to the address of your database, 
 if your database is not located at the default address.
 
 Step 2: Create database
@@ -18,5 +18,5 @@ This will create the pokemon table.
 
 Step 4: Populate pokemon table
 
-Open your terminal and navigate to 'pokedex-2018-honeybadgers' and run 'php -f dataScrape/apiPull.php'.  
+Open your terminal and navigate to 'pokedex-2018-honeybadgers' and run 'php -f dataScrape/ApiPull.php'.  
 This will add 151 pokemon to the table.
