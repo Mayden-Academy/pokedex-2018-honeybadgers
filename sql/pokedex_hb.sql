@@ -26,14 +26,13 @@
 DROP TABLE IF EXISTS `pokemon`;
 
 CREATE TABLE `pokemon` (
-  `id` tinyint(3) unsigned NOT NULL,
+  `id` int(3) unsigned NOT NULL,
   `name` varchar(20) NOT NULL DEFAULT '',
   `type_1` varchar(20) NOT NULL DEFAULT '',
   `type_2` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 # Dump of table status
 # ------------------------------------------------------------
@@ -42,7 +41,7 @@ DROP TABLE IF EXISTS `status`;
 
 CREATE TABLE `status` (
   `user_id` int(11) unsigned NOT NULL,
-  `pokemon_id` tinyint(4) unsigned NOT NULL,
+  `pokemon_id` int(4) unsigned NOT NULL,
   `seen_caught` tinyint(1) DEFAULT NULL COMMENT 'NULL unseen, 0 seen, 1 caught',
   UNIQUE KEY `user_pokemon` (`user_id`,`pokemon_id`) USING BTREE,
   KEY `pokemon_id` (`pokemon_id`),
@@ -63,7 +62,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 
 
@@ -73,3 +72,5 @@ CREATE TABLE `users` (
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+-- Dump completed on 2018-11-14 13:24:27

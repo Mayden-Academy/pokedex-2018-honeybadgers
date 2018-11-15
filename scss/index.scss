@@ -13,12 +13,18 @@ html {
     font-family: 'Cantarell', sans-serif;
 }
 
+main {
+  width: 1000px;
+  margin: 30px auto;
+}
+
 #scroll {
-    width: 1000px;
-    background-color: $mine-shaft-grey;
-    height: 700px;
-    margin: 0 auto;
-    overflow: auto;
+  width: 100%;
+  height: 80vh;
+  margin: 0 auto;
+  overflow: auto;
+  border: 1px solid $poke-blue;
+  border-radius: 3px;
 }
 
 ul {
@@ -33,18 +39,30 @@ h2 {
 }
 
 .poke-container {
-    width: 100%;
-    height: 150px;
-    border: 1px solid #222222;
+  width: 100%;
+  height: 150px;
+  border: 1px solid #222222;
+  background-color: $poke-grey;
+}
 
+.poke-container.caught {
+  color: $white;
+  background-color: $poke-blue;
+
+  .icon {
+    filter: initial;
+  }
+}
+
+.poke-container.seen {
+  background-color: $poke-green;
 }
 
 .info {
-    width: 65%;
-    height: 100%;
-    float: left;
-    background-color: $poke-grey;
-    padding-left: 5%;
+  width: 65%;
+  height: 100%;
+  float: left;
+  padding-left: 5%;
 }
 
 .upper {
@@ -86,15 +104,16 @@ h2 {
 }
 
 .icon {
-        height: 80%;
-        display: inline;
+  height: 80%;
+  display: inline;
+  color: white;
+  filter: brightness(0);
 }
 
 .picture-holder {
-    float: left;
-    width: 35%;
-    height: 100%;
-    background-color: $poke-grey;
+  float: left;
+  width: 35%;
+  height: 100%;
 }
 
 .picture {
@@ -109,18 +128,18 @@ footer {
 }
 
 #save {
-    float: right;
-    height: 40px;
-    margin-top: 1%;
-    width: 100%;
-    font-size: larger;
-    background: transparent;
-    border: 1px solid $poke-blue;
-    border-radius: 3px;
+  float: right;
+  height: 40px;
+  margin-top: 1%;
+  width: 150px;
+  font-size: larger;
+  background: transparent;
+  border: 1px solid $poke-blue;
+  border-radius: 3px;
 
-    &:hover {
-        background-color: $poke-blue;
-        color: $poke-yellow;
-        transition: all 0.3s;
-    }
+  &:hover {
+    background-color: $poke-blue;
+    color: $poke-yellow;
+    transition: all 0.3s;
+  }
 }

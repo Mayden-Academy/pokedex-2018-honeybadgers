@@ -13,7 +13,7 @@ Using the database manager of your choice, create a database called 'pokedex_hb'
 
 Step 3: Create table
 
-Then run 'sql/pokedex_2018-11-12.sql' in the database manager.  
+Then run 'sql/pokedex_hb.sql' in the database manager.
 This will create the pokemon table.
 
 Step 4: Populate pokemon table

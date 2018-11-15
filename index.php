@@ -11,11 +11,10 @@ require_once ('vendor/autoload.php');
 use Pokedex\DbConnection;
 use Pokedex\PokeList;
 
-$dbConnection = new DbConnection();
-$pokeList = new PokeList($dbConnection->getDB());
-
 $userID = (int)$_SESSION['id'];
 
+$dbConnection = new DbConnection();
+$pokeList = new PokeList($dbConnection->getDB(), $userID);
 
 if (!empty($_POST)) {
     foreach ($_POST as $query => $status) {
@@ -35,10 +34,12 @@ function updatePokemonStatus(PDO $db, int $userID, int $pokemonID, $status) {
     try {
         $stmt->execute();
     } catch (PDOException $e) {
-        throw new Exception('One or more of the input variables were in the incorrect format.');
+        throw $e;
     }
 }
 
+$db = new DbConnection();
+$pokeList = new PokeList($db->getDB(), $_SESSION['id']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,7 +57,7 @@ function updatePokemonStatus(PDO $db, int $userID, int $pokemonID, $status) {
             <ul>
                 <?php
                 foreach ($pokeList->getPokemon() as $pokemon) {
-                    include 'pokemonEntryTemplate.phtml';
+                    require 'pokemonEntryTemplate.phtml';
                 }
                 ?>
             </ul>
