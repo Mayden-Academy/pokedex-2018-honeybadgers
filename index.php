@@ -25,16 +25,13 @@ if (!$_SESSION['loggedIn']) {
 </head>
 <body>
     <main>
-        <form>
-            <ul id="scroll">
-                <?php
-                    foreach ($pokeList->getPokemon() as $pokemon) {
-                        require 'pokemonEntryTemplate.phtml';
-                    }
-                ?>
-            </ul>
-            <input type="submit" value="Save" id="save">
-        </form>
+        <ul id="scroll">
+            <?php
+                foreach ($pokeList->getPokemon() as $pokemon) {
+                    require 'pokemonEntryTemplate.phtml';
+                }
+            ?>
+        </ul>
     </main>
 </body>
 </html>
