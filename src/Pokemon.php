@@ -9,6 +9,7 @@ class Pokemon
     private $name;
     private $type_1;
     private $type_2;
+    private $seenCaught;
 
 
     public function __construct()
@@ -49,5 +50,13 @@ class Pokemon
     public function getType2()
     {
         return $this->type_2;
+    }
+
+    /**
+     * @return mixed The seen caught status.
+     */
+    public function getSeenCaught()
+    {
+        return $this->seenCaught;
     }
 }
