@@ -1,8 +1,6 @@
 <?php
-namespace Pokedex;
-
+namespace Pokedex\Abstracts;
 
 abstract class AbstractEmail
 {
-
 }

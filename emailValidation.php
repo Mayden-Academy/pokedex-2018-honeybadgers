@@ -1,32 +1,41 @@
 <?php
+session_start();
 
 require_once ('vendor/autoload.php');
 
 use Pokedex\ValueObjects\Email;
 use Pokedex\Exceptions\EmailException;
 use Pokedex\User;
+use Pokedex\DbConnection;
+use Pokedex\ErrorLog;
 
-$userEmail = $_POST['tbc'] ?? FALSE; //$_POST['tbc'] needs to be replaced with actual input name
+$userEmail = $_POST['email'] ?? FALSE;
 
 if ($userEmail) {
     try {
         $emailObj = new Email($userEmail);
     } catch (EmailException $e) {
-        header('Location:login.php?error=1'); // error1 invalid email address.
+        header('Location:login.php?error=1');
         exit();
     } catch (Exception $e) {
-        $errorLog = fopen('errorLog.txt', 'w');
-        fwrite($errorLog, $e->getMessage() . "\n");
-        fclose($errorLog);
-        header('Location:login.php?error=2'); //error2 should provide non specific message to user.
+        ErrorLog::log($e->getMessage());
+        header('Location:login.php?error=2');
         exit();
     }
 
-    $user = new User($emailObj);
-    echo $emailObj;
+    $db = new DbConnection;
+    $db = $db->getDB();
+    $user = new User($emailObj, $db);
+
+    $userID = $user->getUserID();
+
+    $_SESSION['loggedIn'] = TRUE;
+    $_SESSION['userID'] = $userID;
+
+    header('Location:index.php');
 
 } else {
-    header('Location:login.php?error=3'); //no email detected
+    header('Location:login.php?error=3');
     exit();
 }
 

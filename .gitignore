@@ -1,8 +1,9 @@
-.idea/
-errorLog.txt
-node_modules/
 css/pokestyles.css
-.DS_Store
-vendor/
 css/index.css
+.DS_Store
+errorLog.txt
+.idea/
+node_modules/
+vendor/
+
 

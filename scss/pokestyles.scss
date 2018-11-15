@@ -21,7 +21,6 @@ header {
 }
 
 header h1 {
-  z-index: 999;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -41,13 +40,9 @@ header img {
   height: 70%;
 }
 
-
 main {
   margin: 0 auto;
   width: 400px;
-}
-label {
-  display: none;
 }
 
 form {
@@ -75,9 +70,4 @@ form {
     color: $poke-yellow;
     transition: all 0.3s;
   }
-
-   &:active {
-     background-color: hotpink;
-   }
 }
-
