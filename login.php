@@ -1,6 +1,10 @@
 <?php
+require_once ('vendor/autoload.php');
 
+use Pokedex\ViewHelpers\LoginViewHelper;
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,12 +20,13 @@
     <h1>POKÈDEX</h1>
 </header>
 <main>
-    <form>
-        <label class="email" for="email"></label>
-        <input class="email" id="email" placeholder=" Email..." type="email">
+    <form method="post" action="emailValidation.php">
+        <input class="email" name="email" id="email" alt="email" type="email" placeholder=" Email...">
         <input class="loginbutton" type="submit" value="Login">
     </form>
-    <p>This is not a valid email. Please try again.</p>
+    <p class="login-error">
+        <?php echo LoginViewHelper::outputError($_GET); ?>
+    </p>
 </main>
 </body>
 </html>

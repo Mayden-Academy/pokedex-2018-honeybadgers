@@ -5,7 +5,7 @@ require_once ('vendor/autoload.php');
 use Pokedex\DbConnection;
 use Pokedex\PokeList;
 
-$search = '%%';
+$search = '%';
 
 if(isset($_GET['search'])) {
     $search = '%' . $_GET['search'] . '%';
@@ -13,7 +13,11 @@ if(isset($_GET['search'])) {
 
 $db = new DbConnection();
 $pokeList = new PokeList($db->getDB(), $search);
+session_start();
 
+if (!$_SESSION['loggedIn']) {
+    header('Location:login.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +35,6 @@ $pokeList = new PokeList($db->getDB(), $search);
             <input type="submit" formmethod="get" value="Search" class="button search">
             <a href="index.php" class="button search">Reset search</a>
         </form>
-        <form>
             <div id="scroll">
                 <ul>
                     <?php
@@ -41,10 +44,6 @@ $pokeList = new PokeList($db->getDB(), $search);
                     ?>
                 </ul>
             </div>
-            <footer>
-                <input type="submit" value="Save" id="save">
-            </footer>
-        </form>
     </main>
 </body>
 </html>

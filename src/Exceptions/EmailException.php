@@ -2,5 +2,6 @@
 
 namespace Pokedex\Exceptions;
 
-class EmailException extends \Exception {
+class EmailException extends \Exception
+{
 }
