@@ -19,19 +19,23 @@ $userID = (int)$_SESSION['id'];
 
 if (!empty($_POST)) {
     foreach ($_POST as $query => $status) {
-        $pokemonID = explode('_', $query)[1];
+        $pokemonID = (int)explode('_', $query)[1];
         $status = ($status == '' ? NULL : $status);
-        $sql = 'INSERT INTO status (user_id, pokemon_id, seen_caught) VALUES (:user_id, :pokemon_id, :seen_caught)
+        updatePokemonStatus($dbConnection->getDB(), $userID, $pokemonID, $status);
+    }
+}
+
+function updatePokemonStatus(PDO $db, int $userID, int $pokemonID, $status) {
+    $sql = 'INSERT INTO status (user_id, pokemon_id, seen_caught) VALUES (:user_id, :pokemon_id, :seen_caught)
                     ON DUPLICATE KEY UPDATE `seen_caught` = :seen_caught';
-        $stmt = $dbConnection->getDB()->prepare($sql);
-        $stmt->bindParam(':user_id',$userID);
-        $stmt->bindParam(':pokemon_id',$pokemonID);
-        $stmt->bindParam(':seen_caught',$status);
-        try {
-            $stmt->execute();
-        } catch (PDOException $e) {
-            throw new Exception('One or more of the input variables were in the incorrect format.');
-        }
+    $stmt = $db->prepare($sql);
+    $stmt->bindParam(':user_id',$userID);
+    $stmt->bindParam(':pokemon_id',$pokemonID);
+    $stmt->bindParam(':seen_caught',$status);
+    try {
+        $stmt->execute();
+    } catch (PDOException $e) {
+        throw new Exception('One or more of the input variables were in the incorrect format.');
     }
 }
 
