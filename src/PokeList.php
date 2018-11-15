@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: academy
- * Date: 14/11/2018
- * Time: 11:48
- */
+
 
 namespace Pokedex;
 
