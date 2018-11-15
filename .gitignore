@@ -1,4 +1,5 @@
 .idea/
+errorLog.txt
 node_modules/
 vendor/
 .DS_Store

@@ -5,14 +5,12 @@ session_start();
 if (!$_SESSION['loggedIn']) {
     header('Location:login.php');
 }
-
 require_once ('vendor/autoload.php');
 
 use Pokedex\DbConnection;
 use Pokedex\PokeList;
 
 $userID = (int)$_SESSION['id'];
-
 $dbConnection = new DbConnection();
 $pokeList = new PokeList($dbConnection->getDB(), $userID);
 
