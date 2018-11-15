@@ -12,21 +12,21 @@
             </div>
             <div class="poke-attributes">
                 <div class="icon-container">
-                    <label for="unseen">
+                    <label for="unseen-<?php echo $pokemon->getId(); ?>">
                         <img src="img/Eye_closed.svg" class="icon">
-                        <input type="radio" name="status<?php echo $pokemon->getId()?>" value="unseen" id="unseen" <?php echo $pokemon->getSeenCaught()[0]?>>
+                        <input type="radio" name="status_<?php echo $pokemon->getId()?>" value="" id="unseen" <?php echo $pokemon->getSeenCaught()[0]?>>
                     </label>
                 </div>
                 <div class="icon-container">
-                    <label for="seen">
+                    <label for="seen-<?php echo $pokemon->getId(); ?>">
                         <img src="img/Eye_opened.svg" class="icon">
-                        <input type="radio" name="status<?php echo $pokemon->getId()?>" value="seen" id="seen" <?php echo $pokemon->getSeenCaught()[1]?>>
+                        <input type="radio" name="status_<?php echo $pokemon->getId()?>" value="0" id="seen" <?php echo $pokemon->getSeenCaught()[1]?>>
                     </label>
                 </div>
                 <div class="icon-container">
-                    <label for="caught">
+                    <label for="caught-<?php echo $pokemon->getId(); ?>">
                         <img src="img/pokeball-2.svg" class="icon">
-                        <input type="radio" name="status<?php echo $pokemon->getId()?>" value="caught" id="caught" <?php echo $pokemon->getSeenCaught()[2]?>>
+                        <input type="radio" name="status_<?php echo $pokemon->getId()?>" value="1" id="caught" <?php echo $pokemon->getSeenCaught()[2]?>>
                     </label>
                 </div>
             </div>

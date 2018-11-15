@@ -30,7 +30,7 @@ if ($userEmail) {
     $userID = $user->getUserID();
 
     $_SESSION['loggedIn'] = TRUE;
-    $_SESSION['userID'] = $userID;
+    $_SESSION['id'] = $user->getUserID();
 
     header('Location:index.php');
 

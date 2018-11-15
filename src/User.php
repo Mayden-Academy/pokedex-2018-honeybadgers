@@ -20,15 +20,12 @@ class User
         try {
             $stmt = $db->prepare('SELECT `id`, `email` FROM `users` WHERE `email` = :email;');
             $stmt->execute([':email' => $this->email]);
-            $count = $stmt->rowCount();
-
-            if (!$count) {
+            $data = $stmt->fetch();
+            $this->userID = $data['id'];
+            if (empty($data)) {
                 $stmt = $db->prepare('INSERT INTO `users` (`email`) VALUES (:email);');
                 $stmt->execute(['email'=>$this->email]);
                 $this->userID = $db->lastInsertId();
-            } else {
-                $data = $stmt->fetch();
-                $this->userID = $data['id'];
             }
         } catch (\Exception $e) {
             ErrorLog::log($e->getMessage());
@@ -36,9 +33,11 @@ class User
         }
     }
 
-    public function getUserID() {
+    /**
+     * @return int The user's ID.
+     */
+    public function getUserID(): int
+    {
         return $this->userID;
     }
-
-
 }
