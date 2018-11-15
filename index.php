@@ -5,8 +5,14 @@ require_once ('vendor/autoload.php');
 use Pokedex\DbConnection;
 use Pokedex\PokeList;
 
-$db = new DbConnection();
-$pokeList = new PokeList($db->getDB());
+$dbConnection = new DbConnection();
+$pokeList = new PokeList($dbConnection->getDB());
+
+$userID = 1;
+
+
+
+
 
 ?>
 <!DOCTYPE html>
@@ -19,20 +25,42 @@ $pokeList = new PokeList($db->getDB());
     <title>Pokédex</title>
 </head>
 <body>
-<form>
-    <div id="scroll">
-        <ul>
-            <?php
-            foreach ($pokeList->getPokemon() as $pokemon) {
-                echo require 'pokemonEntryTemplate.phtml';
+<main>
+    <?php
+
+    if (!empty($_GET)) {
+        foreach ($_GET as $query => $status) {
+            $pokemonID = explode('_', $query)[1];
+            $status = ($status == '' ? NULL : $status);
+            $sql = 'INSERT INTO status (user_id, pokemon_id, seen_caught) VALUES (:user_id, :pokemon_id, :seen_caught)
+                    ON DUPLICATE KEY UPDATE `seen_caught` = :seen_caught';
+            $stmt = $dbConnection->getDB()->prepare($sql);
+            $stmt->bindParam(':user_id',$userID);
+            $stmt->bindParam(':pokemon_id',$pokemonID);
+            $stmt->bindParam(':seen_caught',$status);
+            try {
+                $stmt->execute();
+            } catch (PDOException $e) {
+                throw new Exception('One or more of the input variables were in the incorrect format.');
             }
-            ?>
-        </ul>
-    </div>
-    <footer>
-        <input type="submit" value="Save" id="save">
-    </footer>
-</form>
+        }
+    }
+
+    ?>
+    <form>
+        <div id="scroll">
+            <ul>
+                <?php
+                foreach ($pokeList->getPokemon() as $pokemon) {
+                    include 'pokemonEntryTemplate.phtml';
+                }
+                ?>
+            </ul>
+        </div>
+        <footer>
+            <input type="submit" value="Save" id="save">
+        </footer>
+    </form>
 </main>
 </body>
 </html>
