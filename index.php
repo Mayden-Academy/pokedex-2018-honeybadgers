@@ -12,7 +12,7 @@ use Pokedex\DbConnection;
 use Pokedex\PokeList;
 
 $db = new DbConnection();
-$pokeList = new PokeList($db->getDB());
+$pokeList = new PokeList($db->getDB(), $_SESSION['userID']);
 
 ?>
 <!DOCTYPE html>

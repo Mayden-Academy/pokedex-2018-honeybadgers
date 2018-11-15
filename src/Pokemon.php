@@ -9,7 +9,7 @@ class Pokemon
     private $name;
     private $type_1;
     private $type_2;
-    private $seenCaught;
+    private $seen_caught;
 
 
     public function __construct()
@@ -57,6 +57,6 @@ class Pokemon
      */
     public function getSeenCaught()
     {
-        return $this->seenCaught;
+        return $this->seen_caught;
     }
 }
