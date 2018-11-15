@@ -1,4 +1,13 @@
 <?php
+
+require_once ('vendor/autoload.php');
+
+use Pokedex\DbConnection;
+use Pokedex\PokeList;
+
+$db = new DbConnection();
+$pokeList = new PokeList($db->getDB());
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,53 +19,20 @@
     <title>Pokédex</title>
 </head>
 <body>
-<main>
-    <form>
-        <div id="scroll">
-            <ul>
-                <li class="poke-container">
-                    <div class="info">
-                        <div class="upper">
-                            <h2 class="poke-title">Pikachu</h2>
-                            <h2 class="poke-id">#25</h2>
-                        </div>
-                        <div class="lower">
-                            <div class="type-holder">
-                                <p class="type">type</p>
-                                <p class="type">type</p>
-                            </div>
-                            <div class="poke-attributes">
-                                <div class="icon-container">
-                                    <label for="unseen">
-                                        <img src="img/Eye_closed.svg" class="icon">
-                                        <input type="radio" name="status" value="unseen" id="unseen">
-                                    </label>
-                                </div>
-                                <div class="icon-container">
-                                    <label for="seen">
-                                        <img src="img/Eye_opened.svg" class="icon">
-                                        <input type="radio" name="status" value="seen" id="seen">
-                                    </label>
-                                </div>
-                                <div class="icon-container">
-                                    <label for="caught">
-                                        <img src="img/pokeball-2.svg" class="icon">
-                                        <input type="radio" name="status" value="caught" id="caught">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="picture-holder">
-                            <img src="https://pokeres.bastionbot.org/images/pokemon/25.png" class="picture">
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <footer>
-            <input type="submit" value="Save" id="save">
-        </footer>
-    </form>
+<form>
+    <div id="scroll">
+        <ul>
+            <?php
+            foreach ($pokeList->getPokemon() as $pokemon) {
+                echo require 'pokemonEntryTemplate.phtml';
+            }
+            ?>
+        </ul>
+    </div>
+    <footer>
+        <input type="submit" value="Save" id="save">
+    </footer>
+</form>
 </main>
 </body>
 </html>
