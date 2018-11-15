@@ -1,6 +1,7 @@
 <?php
 namespace Pokedex;
-class PokeList {
+class PokeList
+{
     private $pokemon;
     /**
      * Creates a new pokeList using a PDO object
