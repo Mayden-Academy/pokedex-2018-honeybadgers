@@ -8,24 +8,25 @@
             <div class="type-holder">
                 <p class="type"><?php echo $pokemon->getType1(); ?></p>
                 <p class="type"><?php echo $pokemon->getType2(); ?></p>
+
             </div>
             <div class="poke-attributes">
                 <div class="icon-container">
                     <label for="unseen">
                         <img src="img/Eye_closed.svg" class="icon">
-                        <input type="radio" name="status<?php echo $pokemon->getId()?>" value="unseen" id="unseen" checked="<?php echo $pokemon->getSeenCaught() === null ?  'checked' :  'unchecked'; ?>">
+                        <input type="radio" name="status<?php echo $pokemon->getId()?>" value="unseen" id="unseen" <?php echo $pokemon->getSeenCaught()[0]?>>
                     </label>
                 </div>
                 <div class="icon-container">
                     <label for="seen">
                         <img src="img/Eye_opened.svg" class="icon">
-                        <input type="radio" name="status<?php echo $pokemon->getId()?>" value="seen" id="seen" checked="<?php echo $pokemon->getSeenCaught() === 0 ?  'checked' :  'unchecked'; ?>">
+                        <input type="radio" name="status<?php echo $pokemon->getId()?>" value="seen" id="seen" <?php echo $pokemon->getSeenCaught()[1]?>>
                     </label>
                 </div>
                 <div class="icon-container">
                     <label for="caught">
                         <img src="img/pokeball-2.svg" class="icon">
-                        <input type="radio" name="status<?php echo $pokemon->getId()?>" value="caught" id="caught" checked="<?php echo $pokemon->getSeenCaught() === 1 ?  'checked' :  'unchecked'; ?>">
+                        <input type="radio" name="status<?php echo $pokemon->getId()?>" value="caught" id="caught" <?php echo $pokemon->getSeenCaught()[2]?>>
                     </label>
                 </div>
             </div>
