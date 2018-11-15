@@ -40,6 +40,4 @@ class User
     {
         return $this->userID;
     }
-
-
 }
