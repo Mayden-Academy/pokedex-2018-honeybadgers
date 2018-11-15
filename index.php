@@ -1,5 +1,11 @@
 <?php
 
+session_start();
+
+if (!$_SESSION['loggedIn']) {
+    header('Location:login.php');
+}
+
 require_once ('vendor/autoload.php');
 
 use Pokedex\DbConnection;
@@ -11,8 +17,23 @@ $pokeList = new PokeList($dbConnection->getDB());
 $userID = 1;
 
 
-
-
+if (!empty($_GET)) {
+    foreach ($_GET as $query => $status) {
+        $pokemonID = explode('_', $query)[1];
+        $status = ($status == '' ? NULL : $status);
+        $sql = 'INSERT INTO status (user_id, pokemon_id, seen_caught) VALUES (:user_id, :pokemon_id, :seen_caught)
+                    ON DUPLICATE KEY UPDATE `seen_caught` = :seen_caught';
+        $stmt = $dbConnection->getDB()->prepare($sql);
+        $stmt->bindParam(':user_id',$userID);
+        $stmt->bindParam(':pokemon_id',$pokemonID);
+        $stmt->bindParam(':seen_caught',$status);
+        try {
+            $stmt->execute();
+        } catch (PDOException $e) {
+            throw new Exception('One or more of the input variables were in the incorrect format.');
+        }
+    }
+}
 
 ?>
 <!DOCTYPE html>
@@ -26,27 +47,6 @@ $userID = 1;
 </head>
 <body>
 <main>
-    <?php
-
-    if (!empty($_GET)) {
-        foreach ($_GET as $query => $status) {
-            $pokemonID = explode('_', $query)[1];
-            $status = ($status == '' ? NULL : $status);
-            $sql = 'INSERT INTO status (user_id, pokemon_id, seen_caught) VALUES (:user_id, :pokemon_id, :seen_caught)
-                    ON DUPLICATE KEY UPDATE `seen_caught` = :seen_caught';
-            $stmt = $dbConnection->getDB()->prepare($sql);
-            $stmt->bindParam(':user_id',$userID);
-            $stmt->bindParam(':pokemon_id',$pokemonID);
-            $stmt->bindParam(':seen_caught',$status);
-            try {
-                $stmt->execute();
-            } catch (PDOException $e) {
-                throw new Exception('One or more of the input variables were in the incorrect format.');
-            }
-        }
-    }
-
-    ?>
     <form>
         <div id="scroll">
             <ul>
