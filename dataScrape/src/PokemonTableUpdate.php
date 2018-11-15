@@ -1,12 +1,12 @@
 <?php
 
-class pokemonTableUpdate
+class PokemonTableUpdate
 {
     private $db;
     private $pokemonDataList;
 
     /**
-     * pokemonTableUpdate constructor.  Opens pokedex db connection
+     * PokemonTableUpdate constructor.  Opens pokedex db connection
      *
      * @param array $pokemonDataList contains an array for each pokemon
      * @param string $dbServerIP is the IP address of the database server

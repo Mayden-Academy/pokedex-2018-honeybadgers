@@ -9,6 +9,7 @@ class Pokemon
     private $name;
     private $type_1;
     private $type_2;
+    private $seen_caught;
 
 /**
  *  Function constructs the class with setting name, type_1, type_2 properties,
@@ -52,4 +53,43 @@ class Pokemon
     {
         return $this->type_2;
     }
+
+    /**
+     * @return array of the radio status.
+     */
+    public function getSeenCaught()
+    {
+        switch ($this->seen_caught) {
+            case null:
+                $arr = ['checked','',''];
+                return $arr;
+                break;
+            case 0:
+                $arr = ['','checked',''];
+                return $arr;
+                break;
+            case 1:
+                $arr = ['','','checked'];
+                return $arr;
+                break;
+        }
+    }
+
+    /**
+     * @return string gets class for status.
+     */
+    public function getStatusColor()
+    {
+        switch ($this->seen_caught) {
+            case null:
+                break;
+            case 0:
+                return 'seen';
+                break;
+            case 1:
+                return 'caught';
+                break;
+        }
+    }
 }
+

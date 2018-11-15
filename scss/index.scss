@@ -41,14 +41,27 @@ h2 {
 .poke-container {
   width: 100%;
   height: 150px;
-  margin-bottom: 10px;
+  border: 1px solid #222222;
+  background-color: $poke-grey;
+}
+
+.poke-container.caught {
+  color: $white;
+  background-color: $poke-blue;
+
+  .icon {
+    filter: initial;
+  }
+}
+
+.poke-container.seen {
+  background-color: $poke-green;
 }
 
 .info {
   width: 65%;
   height: 100%;
   float: left;
-  background-color: $poke-grey;
   padding-left: 5%;
 }
 
@@ -70,19 +83,63 @@ h2 {
 }
 
 .type-holder {
+  width: 20%;
+  float: left;
   height: 100%;
   font-size: 1.2rem;
+}
+
+.poke-attributes {
+  margin: auto;
+  width: 50%;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.icon-container {
+  float: left;
+  height: 40%;
+}
+
+.icon {
+  height: 80%;
+  display: inline;
+  color: white;
+  filter: brightness(0);
 }
 
 .picture-holder {
   float: left;
   width: 35%;
   height: 100%;
-  background-color: $poke-grey;
 }
 
 .picture {
   height: 100%;
   margin: auto;
   display: block;
+}
+
+footer {
+  width: 1000px;
+  margin: auto;
+}
+
+#save {
+  float: right;
+  height: 40px;
+  margin-top: 1%;
+  width: 150px;
+  font-size: larger;
+  background: transparent;
+  border: 1px solid $poke-blue;
+  border-radius: 3px;
+
+  &:hover {
+    background-color: $poke-blue;
+    color: $poke-yellow;
+    transition: all 0.3s;
+  }
 }
