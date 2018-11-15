@@ -53,7 +53,7 @@ class Pokemon
     }
 
     /**
-     * @return mixed The seen caught status.
+     * @return array of the radio status.
      */
     public function getSeenCaught()
     {
