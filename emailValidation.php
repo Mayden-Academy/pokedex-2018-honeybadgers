@@ -27,7 +27,11 @@ if ($userEmail) {
     $db = $db->getDB();
     $user = new User($emailObj, $db);
 
+    $userID = $user->getUserID();
+
     $_SESSION['loggedIn'] = TRUE;
+    $_SESSION['userID'] = $userID;
+
     header('Location:index.php');
 
 } else {
