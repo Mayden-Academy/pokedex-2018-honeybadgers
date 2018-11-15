@@ -10,7 +10,7 @@ namespace Pokedex;
 
 class PokeList {
 
-    private $pokemon;
+    private $pokemonList;
 
     /**
      * Creates a new pokeList using a DBConnection
@@ -20,7 +20,7 @@ class PokeList {
     {
         $stmt = $db->prepare('SELECT `id`, `name`, `type_1`, `type_2` FROM `pokemon`');
         $stmt->execute();
-        $this->pokemon = $stmt->fetchAll(\PDO::FETCH_CLASS, 'Pokedex\Pokemon');
+        $this->pokemonList = $stmt->fetchAll(\PDO::FETCH_CLASS, 'Pokedex\Pokemon');
     }
 
     /**
@@ -28,6 +28,6 @@ class PokeList {
      */
     public function getPokemon() : array
     {
-        return $this->pokemon;
+        return $this->pokemonList;
     }
 }
