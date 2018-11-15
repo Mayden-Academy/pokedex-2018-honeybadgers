@@ -26,12 +26,17 @@ $pokeList = new PokeList($db->getDB(), $search);
 </head>
 <body>
     <main>
+        <form action="index.php" class="nameSearch">
+            <input type="search" name="search" placeholder="Search by name" class="search">
+            <input type="submit" formmethod="get" value="Search" class="button search">
+            <a href="index.php" class="button search">Reset search</a>
+        </form>
         <form>
             <div id="scroll">
                 <ul>
                     <?php
                         foreach ($pokeList->getPokemon() as $pokemon) {
-                            echo require 'pokemonEntryTemplate.phtml';
+                            require 'pokemonEntryTemplate.phtml';
                         }
                     ?>
                 </ul>
