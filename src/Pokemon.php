@@ -10,10 +10,12 @@ class Pokemon
     private $type_1;
     private $type_2;
 
-
+/**
+ *  Function constructs the class with setting name, type_1, type_2 properties,
+ * and capitalises first letter of each property.
+ */
     public function __construct()
     {
-        //capitalises first letter of each string for more a professional appearance
         $this->name = ucfirst($this->name);
         $this->type_1 = ucfirst($this->type_1);
         $this->type_2 = ucfirst($this->type_2);
