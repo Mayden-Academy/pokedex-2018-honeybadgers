@@ -57,6 +57,16 @@ class Pokemon
      */
     public function getSeenCaught()
     {
-        return $this->seenCaught;
+        switch (TRUE) {
+            case ($this->seenCaught === null);
+            return $arr = [1,0,0];
+
+            case ($this->seenCaught === 0);
+            return $arr = [0,1,0];
+
+            case ($this->seenCaught === 1);
+            return $arr = [0,1,1];
+
+        }
     }
 }
