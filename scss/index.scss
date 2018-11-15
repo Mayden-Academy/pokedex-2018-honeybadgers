@@ -70,8 +70,6 @@ h2 {
 }
 
 .type-holder {
-  width: 20%;
-  float: left;
   height: 100%;
   font-size: 1.2rem;
 }
@@ -87,21 +85,4 @@ h2 {
   height: 100%;
   margin: auto;
   display: block;
-}
-
-#save {
-  float: right;
-  height: 40px;
-  margin-top: 1%;
-  width: 150px;
-  font-size: larger;
-  background: transparent;
-  border: 1px solid $poke-blue;
-  border-radius: 3px;
-
-  &:hover {
-    background-color: $poke-blue;
-    color: $poke-yellow;
-    transition: all 0.3s;
-  }
 }
