@@ -21,12 +21,12 @@ class User
             $stmt = $db->prepare('SELECT `id`, `email` FROM `users` WHERE `email` = :email;');
             $stmt->execute([':email' => $this->email]);
             $data = $stmt->fetch();
-            $this->userID = $data['id'];
             if (empty($data)) {
                 $stmt = $db->prepare('INSERT INTO `users` (`email`) VALUES (:email);');
                 $stmt->execute(['email'=>$this->email]);
-                $this->userID = $db->lastInsertId();
+                $data['id'] = $db->lastInsertId();
             }
+            $this->userID = $data['id'];
         } catch (\Exception $e) {
             ErrorLog::log($e->getMessage());
             header('Location:login.php?error=2');
@@ -36,7 +36,7 @@ class User
     /**
      * @return int The user's ID.
      */
-    public function getUserID(): int
+    public function getUserID() : int
     {
         return $this->userID;
     }
