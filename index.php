@@ -19,21 +19,20 @@ $pokeList = new PokeList($db->getDB());
     <title>Pokédex</title>
 </head>
 <body>
-    <main>
-        <form>
-            <div id="scroll">
-                <ul>
-                    <?php
-                        foreach ($pokeList->getPokemon() as $pokemon) {
-                            echo require 'pokemonEntryTemplate.phtml';
-                        }
-                    ?>
-                </ul>
-            </div>
-            <footer>
-                <input type="submit" value="Save" id="save">
-            </footer>
-        </form>
-    </main>
+<form>
+    <div id="scroll">
+        <ul>
+            <?php
+            foreach ($pokeList->getPokemon() as $pokemon) {
+                echo require 'pokemonEntryTemplate.phtml';
+            }
+            ?>
+        </ul>
+    </div>
+    <footer>
+        <input type="submit" value="Save" id="save">
+    </footer>
+</form>
+</main>
 </body>
 </html>
