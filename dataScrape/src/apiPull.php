@@ -1,11 +1,11 @@
 <?php
 
-class apiPull
+class ApiPull
 {
     private $pokemonDataList;
 
     /**
-     * apiPull constructor.  Pulls each pokemon JSON from api, and appends relevant data to PokemonDataList
+     * ApiPull constructor.  Pulls each pokemon JSON from api, and appends relevant data to PokemonDataList
      */
     public function __construct()
     {
