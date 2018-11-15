@@ -19,6 +19,7 @@ $pokeList = new PokeList($db->getDB());
     <title>Pokédex</title>
 </head>
 <body>
+<main>
 <form>
     <div id="scroll">
         <ul>

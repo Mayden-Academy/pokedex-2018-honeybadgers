@@ -1,4 +1,4 @@
-<li class="poke-container">
+<li class="poke-container <?php echo $pokemon->getStatusColor()?>">
     <div class="info">
         <div class="upper">
             <h2 class="poke-title"><?php echo $pokemon->getName(); ?></h2>
@@ -13,19 +13,19 @@
                 <div class="icon-container">
                     <label for="unseen">
                         <img src="img/Eye_closed.svg" class="icon">
-                        <input type="radio" name="status" value="unseen" id="unseen">
+                        <input type="radio" name="status<?php echo $pokemon->getId()?>" value="unseen" id="unseen" checked="<?php echo $pokemon->getSeenCaught() === null ?  'checked' :  'unchecked'; ?>">
                     </label>
                 </div>
                 <div class="icon-container">
                     <label for="seen">
                         <img src="img/Eye_opened.svg" class="icon">
-                        <input type="radio" name="status" value="seen" id="seen">
+                        <input type="radio" name="status<?php echo $pokemon->getId()?>" value="seen" id="seen" checked="<?php echo $pokemon->getSeenCaught() === 0 ?  'checked' :  'unchecked'; ?>">
                     </label>
                 </div>
                 <div class="icon-container">
                     <label for="caught">
                         <img src="img/pokeball-2.svg" class="icon">
-                        <input type="radio" name="status" value="caught" id="caught">
+                        <input type="radio" name="status<?php echo $pokemon->getId()?>" value="caught" id="caught" checked="<?php echo $pokemon->getSeenCaught() === 1 ?  'checked' :  'unchecked'; ?>">
                     </label>
                 </div>
             </div>

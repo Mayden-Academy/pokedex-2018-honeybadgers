@@ -9,7 +9,7 @@ class Pokemon
     private $name;
     private $type_1;
     private $type_2;
-    private $seenCaught;
+    private $seen_caught;
 
 
     public function __construct()
@@ -57,16 +57,22 @@ class Pokemon
      */
     public function getSeenCaught()
     {
+        return $this->seen_caught;
+    }
+
+    /**
+     * @return string gets class for status.
+     */
+    public function getStatusColor()
+    {
         switch (TRUE) {
-            case ($this->seenCaught === null);
-            return $arr = [1,0,0];
 
-            case ($this->seenCaught === 0);
-            return $arr = [0,1,0];
+            case ($this->seen_caught === 0);
+            return $statusColor = 'seen';
 
-            case ($this->seenCaught === 1);
-            return $arr = [0,1,1];
-
+            case ($this->seen_caught === 1);
+            return $statusColor = 'caught';
         }
     }
+
 }
