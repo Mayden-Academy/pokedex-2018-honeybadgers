@@ -19,7 +19,7 @@ class DbConnection
      * Function to get the $db property
      * @return PDO connection to pokedex_hb database
      */
-    public function getDB()
+    public function getDB() : PDO
     {
         return $this->db;
     }
