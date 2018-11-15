@@ -12,9 +12,9 @@
 <body>
     <main>
         <form action="index.php" class="nameSearch">
-            <input type="search" name="nameSearch" placeholder="Search by name">
-            <input type="submit" formmethod="get" value="Search" class="button">
-            <a href="index.php" class="button reset">Reset search</a>
+            <input type="search" name="nameSearch" placeholder="Search by name" class="search">
+            <input type="submit" formmethod="get" value="Search" class="button search">
+            <a href="index.php" class="button search">Reset search</a>
         </form>
         <form>
             <ul id="scroll">

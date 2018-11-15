@@ -23,14 +23,25 @@ main {
 }
 
 .nameSearch {
-    margin: 10px;
-}
+    margin: 10px 0;
+    height: 37px;
 
-.reset {
-    text-decoration: none;
-    color: inherit;
-    position: relative;
-    top: 1px;
+    .search {
+        height: 100%;
+    }
+
+    [type="search"] {
+        border-radius: 3px;
+        border: 1px solid $poke-grey;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        position: relative;
+        padding: 8px;
+        display: inline-block;
+    }
 }
 
 #scroll {
