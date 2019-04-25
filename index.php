@@ -5,8 +5,14 @@ require_once ('vendor/autoload.php');
 use Pokedex\DbConnection;
 use Pokedex\PokeList;
 
+$search = '%';
+
+if(isset($_GET['search'])) {
+    $search = '%' . $_GET['search'] . '%';
+}
+
 $db = new DbConnection();
-$pokeList = new PokeList($db->getDB());
+$pokeList = new PokeList($db->getDB(), $search);
 
 session_start();
 
@@ -25,13 +31,20 @@ if (!$_SESSION['loggedIn']) {
 </head>
 <body>
     <main>
-        <ul id="scroll">
-            <?php
-                foreach ($pokeList->getPokemon() as $pokemon) {
-                    require 'pokemonEntryTemplate.phtml';
-                }
-            ?>
-        </ul>
+        <form action="index.php" class="nameSearch">
+            <input type="search" name="search" placeholder="Search by name" class="search">
+            <input type="submit" formmethod="get" value="Search" class="button search">
+            <a href="index.php" class="button search">Reset search</a>
+        </form>
+            <div id="scroll">
+                <ul>
+                    <?php
+                        foreach ($pokeList->getPokemon() as $pokemon) {
+                            require 'pokemonEntryTemplate.phtml';
+                        }
+                    ?>
+                </ul>
+            </div>
     </main>
 </body>
 </html>

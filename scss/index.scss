@@ -13,9 +13,35 @@ html {
   font-family: 'Cantarell', sans-serif;
 }
 
+body {
+    margin: 0;
+}
+
 main {
   width: 1000px;
-  margin: 30px auto;
+  margin: 0 auto;
+}
+
+.nameSearch {
+    margin: 10px 0;
+    height: 37px;
+
+    .search {
+        height: 100%;
+    }
+
+    [type="search"] {
+        border-radius: 3px;
+        border: 1px solid $poke-grey;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        position: relative;
+        padding: 8px;
+        display: inline-block;
+    }
 }
 
 #scroll {
@@ -85,4 +111,24 @@ h2 {
   height: 100%;
   margin: auto;
   display: block;
+}
+
+.button {
+    background: transparent;
+    border: 1px solid $poke-blue;
+    border-radius: 3px;
+
+    &:hover {
+        background-color: $poke-blue;
+        color: $poke-yellow;
+        transition: all 0.3s;
+    }
+}
+
+#save {
+  float: right;
+  height: 40px;
+  margin-top: 1%;
+  width: 150px;
+  font-size: larger;
 }
